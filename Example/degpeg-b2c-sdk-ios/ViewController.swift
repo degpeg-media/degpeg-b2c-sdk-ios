@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 //        let log = Logger()
 //        print(log.printLog())
-        
+        //txtFld.addDoneButtonOnKeyboard()
     }
 
     override func didReceiveMemoryWarning() {
