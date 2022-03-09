@@ -24,19 +24,20 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/degpegrakesh12345/degpeg-b2c-sdk-ios'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'degpegrakesh12345' => 'rkkumar.gbpec@gmail.com' }
+  s.author           = { 'degpegrakesh12345' => 'rakesh.kumar@degpeg.com' }
   s.source           = { :git => 'https://github.com/degpegrakesh12345/degpeg-b2c-sdk-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.ios.deployment_target = '13.0'
+  s.Swift_version = '5.0'
+  s.source_files = 'Classes/**/*.swift'
+  s.platforms = {
+      "ios": "13.0"
+  }
+#   s.resource_bundles = {
+#     'degpeg-b2c-sdk-ios' => ['degpeg-b2c-sdk-ios/Assets/*.png']
+#   }
 
-  s.ios.deployment_target = '9.0'
-
-  s.source_files = 'degpeg-b2c-sdk-ios/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'degpeg-b2c-sdk-ios' => ['degpeg-b2c-sdk-ios/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+#   s.public_header_files = 'Pod/Classes/**/*.h'
+#   s.frameworks = 'UIKit', 'MapKit'
+#   s.dependency 'AFNetworking', '~> 2.3'
 end
