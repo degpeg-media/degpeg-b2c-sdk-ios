@@ -1,0 +1,16 @@
+PODS:
+  - degpeg-b2c-sdk-ios (0.1.0)
+
+DEPENDENCIES:
+  - degpeg-b2c-sdk-ios (from `../`)
+
+EXTERNAL SOURCES:
+  degpeg-b2c-sdk-ios:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  degpeg-b2c-sdk-ios: 0be2694bcd7f2d2b51e9efa659c4f6dd8938d481
+
+PODFILE CHECKSUM: db88960523e490c5dd853fc29c38bd5067247780
+
+COCOAPODS: 1.11.2

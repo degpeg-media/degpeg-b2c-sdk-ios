@@ -1,0 +1,6 @@
+framework module degpeg_b2c_sdk_ios {
+  umbrella header "degpeg-b2c-sdk-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
