@@ -27,12 +27,10 @@ TODO: Add long description of the pod here.
   s.author           = { 'degpegrakesh12345' => 'rakesh.kumar@degpeg.com' }
   s.source           = { :git => 'https://github.com/degpegrakesh12345/degpeg-b2c-sdk-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-  s.ios.deployment_target = '13.0'
-  s.Swift_version = '5.0'
-  s.source_files = 'Classes/**/*.swift'
-  s.platforms = {
-      "ios": "13.0"
-  }
+
+  s.ios.deployment_target = '9.0'
+  s.source_files = 'degpeg-b2c-sdk-ios/Classes/**/*'
+  
 #   s.resource_bundles = {
 #     'degpeg-b2c-sdk-ios' => ['degpeg-b2c-sdk-ios/Assets/*.png']
 #   }
