@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'DegPegB2CSDK-iOS_Example' do
+  pod 'DegPegB2CSDK-iOS', :path => '../'
+
+  target 'DegPegB2CSDK-iOS_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

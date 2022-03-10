@@ -1,0 +1,6 @@
+framework module DegPegB2CSDK_iOS {
+  umbrella header "DegPegB2CSDK-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
