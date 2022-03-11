@@ -27,3 +27,4 @@ acct<blob>=0xC2A072616B6573682E6B756D6172406465677065672E636F6D  0240rakesh.kuma
 ## License
 
 DegPegB2CSDK-iOS is available under the MIT license. See the LICENSE file for more info.
+“# degpeg-b2c-sdk-ios”
