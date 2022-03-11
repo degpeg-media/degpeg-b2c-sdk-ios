@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/degpeg-media/degpeg-b2c-sdk-ios.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'degpeg-media' => 'rakesh.kumar@degpeg.com' }
+  s.author           = { 'degpegrakesh12345' => 'rakesh.kumar@degpeg.com' }
   s.source           = { :git => 'https://github.com/degpeg-media/degpeg-b2c-sdk-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
