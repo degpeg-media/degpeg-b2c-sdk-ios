@@ -18,13 +18,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  'DscrollView is an awesome pod aimed to make yor life easier around UIScrollViews.'
+  'degpegsdk is an awesome pod aimed to make yor life easier around UIScrollViews.'
                        DESC
 
   s.homepage         = 'https://github.com/degpeg-media/degpeg-b2c-sdk-ios.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'rakesh' => 'rakesh.kumar@degpeg.com' }
+  s.author           = { 'degpeg-media' => 'rakesh.kumar@degpeg.com' }
   s.source           = { :git => 'https://github.com/degpeg-media/degpeg-b2c-sdk-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
