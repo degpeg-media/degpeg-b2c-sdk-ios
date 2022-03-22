@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" rowHeight="92" id="KGk-i7-Jjw" customClass="HomeAccountCell" customModule="PatientAppNew" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="91.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAb-Ew-quW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="91.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tJc-24-Tkk">
+                                <rect key="frame" x="12" y="15.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="6dv-rr-DSO"/>
+                                    <constraint firstAttribute="height" constant="60" id="iiu-3O-V83"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-oG-hIH">
+                                <rect key="frame" x="80" y="10" width="232" height="70.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tJc-24-Tkk" firstAttribute="leading" secondItem="JAb-Ew-quW" secondAttribute="leading" constant="12" id="DTK-1i-mnL"/>
+                            <constraint firstAttribute="bottom" secondItem="ilf-oG-hIH" secondAttribute="bottom" constant="11" id="NF1-Aq-zJd"/>
+                            <constraint firstItem="tJc-24-Tkk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JAb-Ew-quW" secondAttribute="top" constant="12" id="NR6-7i-Ulm"/>
+                            <constraint firstItem="ilf-oG-hIH" firstAttribute="top" secondItem="JAb-Ew-quW" secondAttribute="top" constant="10" id="het-dk-rfb"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tJc-24-Tkk" secondAttribute="bottom" constant="12" id="lfl-HI-aZ6"/>
+                            <constraint firstItem="ilf-oG-hIH" firstAttribute="leading" secondItem="tJc-24-Tkk" secondAttribute="trailing" constant="8" id="m2G-Br-frC"/>
+                            <constraint firstAttribute="trailing" secondItem="ilf-oG-hIH" secondAttribute="trailing" constant="8" id="qeL-rx-vhf"/>
+                            <constraint firstItem="tJc-24-Tkk" firstAttribute="centerY" secondItem="JAb-Ew-quW" secondAttribute="centerY" id="sgT-25-hOn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JAb-Ew-quW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Si2-gx-V7I"/>
+                    <constraint firstItem="JAb-Ew-quW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ys9-7t-dKa"/>
+                    <constraint firstAttribute="trailing" secondItem="JAb-Ew-quW" secondAttribute="trailing" id="esy-Np-QUS"/>
+                    <constraint firstAttribute="bottom" secondItem="JAb-Ew-quW" secondAttribute="bottom" id="qps-aa-Eau"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="infoLabel" destination="ilf-oG-hIH" id="sD4-mR-AJR"/>
+                <outlet property="profileImage" destination="tJc-24-Tkk" id="4gY-Mf-XGe"/>
+            </connections>
+            <point key="canvasLocation" x="-96" y="-37"/>
+        </tableViewCell>
+    </objects>
+</document>
