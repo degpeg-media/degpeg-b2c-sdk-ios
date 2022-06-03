@@ -1,0 +1,51 @@
+PODS:
+  - Alamofire (5.5.0)
+  - B2CSDK (0.1.0):
+    - Alamofire
+    - GrowingTextView (= 0.7.2)
+    - IQKeyboardManagerSwift
+    - Kingfisher (~> 7.0)
+    - MBProgressHUD (~> 1.2)
+    - ObjectMapper (~> 4.2)
+    - Socket.IO-Client-Swift (~> 16.0)
+  - GrowingTextView (0.7.2)
+  - IQKeyboardManagerSwift (6.5.9)
+  - Kingfisher (7.1.2)
+  - MBProgressHUD (1.2.0)
+  - ObjectMapper (4.2.0)
+  - Socket.IO-Client-Swift (16.0.1):
+    - Starscream (~> 4.0)
+  - Starscream (4.0.4)
+
+DEPENDENCIES:
+  - B2CSDK (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - GrowingTextView
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - MBProgressHUD
+    - ObjectMapper
+    - Socket.IO-Client-Swift
+    - Starscream
+
+EXTERNAL SOURCES:
+  B2CSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  B2CSDK: 32285c4b962b312ecf4166a67f1a86f8c76b00a5
+  GrowingTextView: 876bf42005b5e4a4fd740597db12caaf41f0fe6c
+  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+
+PODFILE CHECKSUM: a33d7c66edeb10b5ba517cbdc0396a0b71808710
+
+COCOAPODS: 1.11.2
