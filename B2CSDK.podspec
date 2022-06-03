@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/degpeg-media/degpeg-b2c-sdk-ios/B2CSDK'
+  s.homepage         = 'https://github.com/degpeg-media/degpeg-b2c-sdk-ios'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Raj Kadam' => 'rajendra.kadam@degpeg.com' }
-  s.source           = { :git => 'https://github.com/degpeg-media/degpeg-b2c-sdk-ios/tree/Development/B2CSDK', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/degpeg-media/degpeg-b2c-sdk-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '13.0'
