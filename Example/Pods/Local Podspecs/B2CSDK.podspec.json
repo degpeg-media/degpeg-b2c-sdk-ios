@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "Degpeg B2CSDK for clients",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/rajdegpeg/B2CSDK",
+  "homepage": "https://github.com/degpeg-media/degpeg-b2c-sdk-ios",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "Raj Kadam": "rajendra.kadam@degpeg.com"
   },
   "source": {
-    "git": "https://github.com/rajdegpeg/B2CSDK.git",
+    "git": "https://github.com/degpeg-media/degpeg-b2c-sdk-ios.git",
     "tag": "0.1.0"
   },
   "platforms": {
