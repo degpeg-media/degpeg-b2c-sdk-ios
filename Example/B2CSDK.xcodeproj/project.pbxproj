@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		32480F17BBDCC67279A1C2FA /* Pods_B2CSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712A40467AC992D172683D8B /* Pods_B2CSDK_Example.framework */; };
+		355193EF284E0582000FC1BC /* Home2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355193E7284E0581000FC1BC /* Home2View.swift */; };
+		355193F0284E0582000FC1BC /* Home2Cell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355193E8284E0581000FC1BC /* Home2Cell2.swift */; };
+		355193F1284E0582000FC1BC /* Home2Cell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355193E9284E0581000FC1BC /* Home2Cell3.swift */; };
+		355193F2284E0582000FC1BC /* Home2Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355193EA284E0581000FC1BC /* Home2Cell1.xib */; };
+		355193F3284E0582000FC1BC /* Home2Cell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355193EB284E0581000FC1BC /* Home2Cell3.xib */; };
+		355193F4284E0582000FC1BC /* Home2Cell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355193EC284E0581000FC1BC /* Home2Cell1.swift */; };
+		355193F5284E0582000FC1BC /* Home2Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355193ED284E0581000FC1BC /* Home2Cell2.xib */; };
+		355193F6284E0582000FC1BC /* Home2Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355193EE284E0581000FC1BC /* Home2Layout.swift */; };
 		355D33CA283F52DD008D9688 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 355D33C5283F52DC008D9688 /* Nunito-ExtraBold.ttf */; };
 		355D33CB283F52DD008D9688 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 355D33C6283F52DD008D9688 /* Nunito-Bold.ttf */; };
 		355D33CC283F52DD008D9688 /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 355D33C7283F52DD008D9688 /* Nunito-Medium.ttf */; };
@@ -34,6 +42,14 @@
 
 /* Begin PBXFileReference section */
 		2687FFAFB00B13D49DD7FFD7 /* Pods_B2CSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_B2CSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		355193E7284E0581000FC1BC /* Home2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home2View.swift; sourceTree = "<group>"; };
+		355193E8284E0581000FC1BC /* Home2Cell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home2Cell2.swift; sourceTree = "<group>"; };
+		355193E9284E0581000FC1BC /* Home2Cell3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home2Cell3.swift; sourceTree = "<group>"; };
+		355193EA284E0581000FC1BC /* Home2Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home2Cell1.xib; sourceTree = "<group>"; };
+		355193EB284E0581000FC1BC /* Home2Cell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home2Cell3.xib; sourceTree = "<group>"; };
+		355193EC284E0581000FC1BC /* Home2Cell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home2Cell1.swift; sourceTree = "<group>"; };
+		355193ED284E0581000FC1BC /* Home2Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home2Cell2.xib; sourceTree = "<group>"; };
+		355193EE284E0581000FC1BC /* Home2Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home2Layout.swift; sourceTree = "<group>"; };
 		355D33BA283F44B6008D9688 /* B2CSDK_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = B2CSDK_Example.entitlements; sourceTree = "<group>"; };
 		355D33C5283F52DC008D9688 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		355D33C6283F52DD008D9688 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
@@ -80,6 +96,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		355193E6284E0526000FC1BC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				355193EC284E0581000FC1BC /* Home2Cell1.swift */,
+				355193EA284E0581000FC1BC /* Home2Cell1.xib */,
+				355193E8284E0581000FC1BC /* Home2Cell2.swift */,
+				355193ED284E0581000FC1BC /* Home2Cell2.xib */,
+				355193E9284E0581000FC1BC /* Home2Cell3.swift */,
+				355193EB284E0581000FC1BC /* Home2Cell3.xib */,
+				355193EE284E0581000FC1BC /* Home2Layout.swift */,
+				355193E7284E0581000FC1BC /* Home2View.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		400DD268445C18F35E39785C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +147,7 @@
 		607FACD21AFB9204008FA782 /* Example for B2CSDK */ = {
 			isa = PBXGroup;
 			children = (
+				355193E6284E0526000FC1BC /* Home */,
 				355D33C6283F52DD008D9688 /* Nunito-Bold.ttf */,
 				355D33C5283F52DC008D9688 /* Nunito-ExtraBold.ttf */,
 				355D33C7283F52DD008D9688 /* Nunito-Medium.ttf */,
@@ -264,14 +296,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				355193F2284E0582000FC1BC /* Home2Cell1.xib in Resources */,
 				355D33CE283F52DD008D9688 /* Nunito-SemiBold.ttf in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				355D33CB283F52DD008D9688 /* Nunito-Bold.ttf in Resources */,
 				355D33CC283F52DD008D9688 /* Nunito-Medium.ttf in Resources */,
+				355193F3284E0582000FC1BC /* Home2Cell3.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				355D33CD283F52DD008D9688 /* Nunito-Regular.ttf in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				355D33CA283F52DD008D9688 /* Nunito-ExtraBold.ttf in Resources */,
+				355193F5284E0582000FC1BC /* Home2Cell2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +405,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				355193F1284E0582000FC1BC /* Home2Cell3.swift in Sources */,
+				355193F4284E0582000FC1BC /* Home2Cell1.swift in Sources */,
+				355193F0284E0582000FC1BC /* Home2Cell2.swift in Sources */,
+				355193EF284E0582000FC1BC /* Home2View.swift in Sources */,
+				355193F6284E0582000FC1BC /* Home2Layout.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -528,7 +568,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -548,7 +588,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
