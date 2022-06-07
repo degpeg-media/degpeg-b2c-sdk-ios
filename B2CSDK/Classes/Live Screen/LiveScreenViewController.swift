@@ -32,9 +32,16 @@ class LiveScreenViewController: B2CBaseViewController {
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var btnSend: UIButton!
     @IBOutlet weak var messageInputTextView: GrowingTextView!
+    @IBOutlet weak var messageButton: UIButton!
     @IBOutlet weak var inputTextContainerView: UIView!
     
+    @IBOutlet weak var overlayView: UIView!
+    
+    @IBOutlet weak var overlayViewHeight: NSLayoutConstraint!
     var PRODUCT_CELL_HEIGHT: CGFloat = 90
+    var OVERLAYVIEW_MAX_HEIGHT: CGFloat = 420
+    var OVERLAY_VIEW_WITHPRODUCTH_HEIGHT:CGFloat = 210
+    
     var screenData: RowData?
     var messageArray = [ChatMessage]()
     var productList: [Product] = [Product]()
@@ -75,8 +82,10 @@ class LiveScreenViewController: B2CBaseViewController {
         if let products = screenData?.products {
             viewModel?.fetchAllProducts(products: products)
             collectionViewHeightConstraint.constant = PRODUCT_CELL_HEIGHT
+            overlayViewHeight.constant = OVERLAY_VIEW_WITHPRODUCTH_HEIGHT
         }else{
             collectionViewHeightConstraint.constant = 0
+            overlayViewHeight.constant = OVERLAY_VIEW_WITHPRODUCTH_HEIGHT-PRODUCT_CELL_HEIGHT
         }
         
         
@@ -97,6 +106,15 @@ class LiveScreenViewController: B2CBaseViewController {
         removeObserver()
         viewModel?.leaveRoom(sessionId: screenData?.id ?? "")
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func showHideMessageTableActin(_ sender: UIButton) {
+        overlayView.isHidden = false
+        messageTableView.isHidden = false
+        messageButton.isHidden = true
+        messageTableView.isUserInteractionEnabled = true
+        overlayViewHeight.constant = OVERLAYVIEW_MAX_HEIGHT
+        
     }
     
     @IBAction func sendMessageAction(_ sender: UIButton) {
@@ -192,6 +210,8 @@ extension LiveScreenViewController {
         messageInputTextView.delegate = self
         messageInputTextView.trimWhiteSpaceWhenEndEditing = false
         messageInputTextView.placeholder = "Post a Comment"
+       messageInputTextView.autocorrectionType = .no
+       messageInputTextView.smartQuotesType = .no
         messageInputTextView.placeholderColor = UIColor(white: 10.8, alpha: 1.0)
         messageInputTextView.minHeight = 34.0
         messageInputTextView.maxHeight = 160.0
@@ -208,8 +228,8 @@ extension LiveScreenViewController {
     }
     
     func configureUI(){
-        statusView.customRoundCorners(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner], radius: 5)
-        countView.customRoundCorners(corners: [.layerMaxXMinYCorner, .layerMaxXMaxYCorner], radius: 5)
+        //statusView.customRoundCorners(corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner], radius: 5)
+        //countView.customRoundCorners(corners: [.layerMaxXMinYCorner, .layerMaxXMaxYCorner], radius: 5)
         commentTextField.isHidden = true
         commentTextField.layer.cornerRadius = 10
         commentTextField.layer.borderWidth = 1
@@ -288,7 +308,7 @@ extension LiveScreenViewController: UITableViewDelegate, UITableViewDataSource {
 
         let message = messageArray[indexPath.row]
         
-        if message.userId == B2CUserDefaults.getUserId() {
+        if message.userId == B2CUserDefaults.getUserName() {
             // Sender message cell
             if let cell = tableView.dequeueReusableCell(withIdentifier: TableCellID.SenderCell, for: indexPath) as? SenderTableViewCell {
                 cell.configureUI()

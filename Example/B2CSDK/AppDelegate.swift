@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = false
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 15
+        IQKeyboardManager.shared.layoutIfNeededOnUpdate = true
         return true
     }
 

@@ -146,12 +146,12 @@ final class ListViewModel: ListViewModelProtocol {
                
             }else if topSectionData.count < 5 {
                
-                for data in plannedSessions {
-                    topSectionData.append(data)
-                    if topSectionData.count == 5 {
-                        break
-                    }
-                }
+//                for data in plannedSessions {
+//                    topSectionData.append(data)
+//                    if topSectionData.count == 5 {
+//                        break
+//                    }
+//                }
                 if topSectionData.count < 5 {
                     for data in completedSessions {
                         topSectionData.append(data)
@@ -168,7 +168,8 @@ final class ListViewModel: ListViewModelProtocol {
             let liveData = ListSectionData.init(sectionName: .live, sectionData: topSectionData)
             
             homeDataArray.append(liveData)
-            let trendindData = ListSectionData.init(sectionName: .trending, sectionData: rowData.sorted(by: {$0.sessionDate > $1.sessionDate}))
+            let trendindDataArray = liveDataArray+completedSessions
+            let trendindData = ListSectionData.init(sectionName: .trending, sectionData: trendindDataArray) //rowData.sorted(by: {$0.sessionDate > $1.sessionDate})
             
             homeDataArray.append(trendindData)
             var categoryRowDta = [RowData]()

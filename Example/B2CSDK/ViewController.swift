@@ -166,25 +166,25 @@ class ViewController: UIViewController {
 
         collectionViewDiscounts.reloadData()
     }
-
-    // MARK: - User actions
-    //-------------------------------------------------------------------------------------------------------------------------------------------
-    @IBAction func actionProfile(_ sender: UIButton) {
-        print(#function)
+    
+    func openSDK(){
         let manager = DegpegManager.init(key: "1234", userId: "6278c4556cb38a7a9c10df6e", userName: "Raj Kadam", influencerID: "6278c4546cb38a7a9c10df6d")
         if let vc = manager.getRootViewController() {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
     }
+
+    // MARK: - User actions
+    //-------------------------------------------------------------------------------------------------------------------------------------------
+    @IBAction func actionProfile(_ sender: UIButton) {
+        print(#function)
+       openSDK()
+    }
     
     @IBAction func actionDegpegSDKDemo(_ sender: UIButton) {
         print(#function)
-        let manager = DegpegManager.init(key: "1234", userId: "6278c4556cb38a7a9c10df6e", userName: "Raj Kadam", influencerID: "6278c4546cb38a7a9c10df6d")
-        if let vc = manager.getRootViewController() {
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
-        }
+        openSDK()
     }
 
     //-------------------------------------------------------------------------------------------------------------------------------------------
@@ -254,6 +254,7 @@ extension ViewController: UICollectionViewDataSource {
 
         return UICollectionViewCell()
     }
+    
 }
 
 // MARK: - UICollectionViewDelegate
@@ -264,7 +265,9 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         print(#function)
-        if (collectionView == collectionViewSlider) { }
+        if (collectionView == collectionViewSlider) {
+            openSDK()
+        }
         if (collectionView == collectionViewCategories) { }
         if (collectionView == collectionViewDiscounts) { }
     }
