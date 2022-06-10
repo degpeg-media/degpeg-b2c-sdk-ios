@@ -14,6 +14,25 @@ final class ListViewModel: ListViewModelProtocol {
     var videos:[ContentProviderDetailsModel] = [ContentProviderDetailsModel]()
     var categories: [CategoryData] = [CategoryData]()
     
+    func getJWT(completionHandler: @escaping (Bool) -> Void) {
+        if NetworkManager.isConnectedToInternet {
+            UIUtils.showHUD(view: viewController?.currentView)
+            let param = ["appId": B2CUserDefaults.getAppID(), "secretKey": B2CUserDefaults.getAppSercet()]
+            HomeService().getJWTToken(param: param) { [weak self] error in
+                guard let self = self else { return }
+                UIUtils.hideHUD(view: self.viewController?.currentView)
+                if error == nil {
+                    completionHandler(true)
+                } else {
+                    //self.viewController?.showError(errorString: error?.message ?? "Invalid Token!")
+                    completionHandler(false)
+                }
+            }
+        }else {
+            self.viewController?.showError(errorString: AlertDetails.NoInternet)
+        }
+    }
+    
     func fetchAllCategories() {
         if NetworkManager.isConnectedToInternet {
             UIUtils.showHUD(view: viewController?.currentView)

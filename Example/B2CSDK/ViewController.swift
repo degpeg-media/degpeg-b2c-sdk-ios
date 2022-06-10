@@ -22,7 +22,8 @@ class ViewController1: UIViewController {
     
     @IBAction func getFrameworkRootVc() {
 
-        let manager = DegpegManager.init(key: "1234", userId: "6278c4556cb38a7a9c10df6e", userName: "Raj Kadam", influencerID: "6278c4546cb38a7a9c10df6d")
+        //let manager1 = DegpegManager.init(key: "1234", userId: "6278c4556cb38a7a9c10df6e", userName: "Raj Kadam", influencerID: "6278c4546cb38a7a9c10df6d")
+        let manager = DegpegManager.init(appID: "", secret: "", userId: "", userName: "", influencerID: "")
         if let vc = manager.getRootViewController() {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
@@ -167,8 +168,20 @@ class ViewController: UIViewController {
         collectionViewDiscounts.reloadData()
     }
     
+    
     func openSDK(){
-        let manager = DegpegManager.init(key: "1234", userId: "6278c4556cb38a7a9c10df6e", userName: "Raj Kadam", influencerID: "6278c4546cb38a7a9c10df6d")
+        
+        
+        // 1. app id
+        // 2. content publisher Id / content prover id
+        // 3. app secret
+        //
+        
+        let appId = "degpegdegpeg _mediaXuUwyvni"
+        let secretKey = "Nnra8P2iGqT2uJFU"
+//        "appId": "degpegdegpeg _mediaXuUwyvni",
+//                "secretKey": "Nnra8P2iGqT2uJFU",
+        let manager = DegpegManager.init(appID: appId, secret: secretKey, userId: "6278c4556cb38a7a9c10df6e", userName: "Raj Kadam", influencerID: "6278c4546cb38a7a9c10df6d") //DegpegManager.init(key: "1234", userId: "6278c4556cb38a7a9c10df6e", userName: "Raj Kadam", influencerID: "6278c4546cb38a7a9c10df6d")
         if let vc = manager.getRootViewController() {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)

@@ -56,8 +56,14 @@ import UIKit
      }
      
      private func getScreenData(spinnerFlag: Bool){
-         viewModel?.fetchAllCategories()
-         viewModel?.getContentPublishers(for: DEFAULT_ContentPublisherId, showSpinnerFlag: spinnerFlag)
+         viewModel?.getJWT(completionHandler: { [weak self] flag in
+             guard let self = self else {return}
+             if flag {
+                 self.viewModel?.fetchAllCategories()
+                 self.viewModel?.getContentPublishers(for: DEFAULT_ContentPublisherId, showSpinnerFlag: spinnerFlag)
+             }
+         })
+         
      }
      
      //

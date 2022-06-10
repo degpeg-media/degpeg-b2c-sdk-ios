@@ -21,4 +21,5 @@ protocol ListViewModelProtocol: AnyObject {
     var viewController: ListViewControllerProtocol? { get set }
     func getContentPublishers(for publisherId: String, showSpinnerFlag: Bool)
     func fetchAllCategories()
+    func getJWT(completionHandler: @escaping (Bool) -> Void)
 }

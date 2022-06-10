@@ -75,6 +75,7 @@
 		330F75DEA835A4D0A1801CD0B1DEE844 /* HeaderSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1D32EC5BC690D542BC967BA36E7C8A /* HeaderSectionTableViewCell.swift */; };
 		33A7D0F2D03004CE256A75E03DF33C70 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BD86EB55EB8B3EDD9A226AFC3F9712 /* RetryPolicy.swift */; };
 		349AB1453646AC154EEB2D3C3C44BEC6 /* KingfisherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC19ADF3111DCAC7172880057629DEC /* KingfisherError.swift */; };
+		355ADE41285371C50081D189 /* JwtModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355ADE40285371C50081D189 /* JwtModel.swift */; };
 		36B8C2BD5153AD5CF825EF7CB4162882 /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE8F59165E456193F96A5B8779F3F3A /* EnumOperators.swift */; };
 		385642406B4B2C1F93EC1C37611ABE82 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9917D949C7BAB8683CCF55949B1903C /* Nunito-SemiBold.ttf */; };
 		38C57725F0F6A73F2DF65849C3E0A3A7 /* WSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B2FB7A1FA6BB2D2619D26F602ADA2E /* WSEngine.swift */; };
@@ -471,7 +472,7 @@
 /* Begin PBXFileReference section */
 		002DCD99B504A88FEC8D677F9CC703EB /* Pods-B2CSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-B2CSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		01234E6D934CB90C40C627A3E7E01EEE /* B2CSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "B2CSDK-Info.plist"; sourceTree = "<group>"; };
-		027A4D171271D9BCA91189A7558A5BE2 /* Nunito-Medium.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
+		027A4D171271D9BCA91189A7558A5BE2 /* Nunito-Medium.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
 		029333021ED2FBF292CDC11CB695951C /* Pods-B2CSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-B2CSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		02D61321C48C12A1A99E940CAB674C70 /* arrow@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "arrow@3x.png"; sourceTree = "<group>"; };
 		030E8E95DACCF2B0D1FA14D959CE443D /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
@@ -490,7 +491,7 @@
 		09E7CDB445812C8A79EC9A024D27200E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		09EB14CC33E683599085D0BF2539AFAB /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
 		0A2FA7DC796E90CFFDD7BED9557D838E /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
-		0B3C2F31A17ECE85A247EFDC54513B7F /* Nunito-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		0B3C2F31A17ECE85A247EFDC54513B7F /* Nunito-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		0C9F5115FC557B8F349E15BCF031EDC3 /* Runtime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Runtime.swift; path = Sources/Utility/Runtime.swift; sourceTree = "<group>"; };
 		0D9D034A30E5483C62E609F3501E8DBF /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		0DE3A2596959E9F2FD95F5C7DDED8A8A /* ListProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListProtocols.swift; sourceTree = "<group>"; };
@@ -504,13 +505,13 @@
 		13E242D191BDA0DB4F221F6EBC264732 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		14215D0D0E3108C7FF6E9B01E4A99FC5 /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		162C8F3A57D7C03077422C1A29A27C1D /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		17D07D832D6225E228E4603F8CDC116C /* Nunito-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		17D07D832D6225E228E4603F8CDC116C /* Nunito-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		1924702FE69D9C983F3D092FF3656DF3 /* LiveScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LiveScreenViewController.swift; sourceTree = "<group>"; };
 		198F3BEFF63D874233085064FD40C72E /* IQKeyboardManager+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Debug.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Debug.swift"; sourceTree = "<group>"; };
 		19DD00B0B04D1D0410D2FD3C76249976 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Image/Filter.swift; sourceTree = "<group>"; };
 		1A0B79315AF37FA0406C1F213882769E /* TrendingVideosTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrendingVideosTableViewCell.swift; sourceTree = "<group>"; };
 		1A3EE16E7C4F82AA9DA8C29588739BAE /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
-		1BBBDB8AED3B0488ACDB368F1836C618 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		1BBBDB8AED3B0488ACDB368F1836C618 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		1F21AFC62BADFEDDA66FE91769BF2D2E /* FoundationHTTPHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoundationHTTPHandler.swift; path = Sources/Framer/FoundationHTTPHandler.swift; sourceTree = "<group>"; };
 		1F39164B5A23B91FD7821B1CEFDDFB5A /* Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combine.swift; path = Source/Combine.swift; sourceTree = "<group>"; };
 		20A6C78795452E48FE83DCDF8A6166C8 /* SessionDataTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDataTask.swift; path = Sources/Networking/SessionDataTask.swift; sourceTree = "<group>"; };
@@ -545,6 +546,7 @@
 		349DF3A9AA32C93B1E3DCBD636D33235 /* UpcomingShowsTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UpcomingShowsTableViewCell.swift; sourceTree = "<group>"; };
 		34E231F97C57D42DBE378553B85247F5 /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		351EDFE5CE937EC901233B0AC49ABF4D /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
+		355ADE40285371C50081D189 /* JwtModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtModel.swift; sourceTree = "<group>"; };
 		357DE5AC31F96E69B72C038A12A68BF3 /* SocketIOClientOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClientOption.swift; path = Source/SocketIO/Client/SocketIOClientOption.swift; sourceTree = "<group>"; };
 		3659F799D5FD2EA4C53128218E9BE5B5 /* MBProgressHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.debug.xcconfig; sourceTree = "<group>"; };
 		36D93C78E37C8F3037ED42C75A63FB1E /* IQKeyboardManagerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.release.xcconfig; sourceTree = "<group>"; };
@@ -605,7 +607,7 @@
 		60D1FC7387FF8879339C8F21CDACE172 /* BrandTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = BrandTableViewCell.xib; sourceTree = "<group>"; };
 		60FC21CE801F3B5CD043A4AB6AA9DB16 /* DegpegManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DegpegManager.swift; sourceTree = "<group>"; };
 		610F5AA9C8C71B643349D7DEB7BD61F7 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		6141EC14A2DA4CF3DD20C2DF176D514A /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		6141EC14A2DA4CF3DD20C2DF176D514A /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		620793BCBDA1902056B7607912BBD148 /* TrendingVideoCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = TrendingVideoCollectionViewCell.xib; sourceTree = "<group>"; };
 		6422052C1EE06BD2BE633F248D31DC19 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		6429015A5C6694BC4403880C84A3A3B1 /* Socket.IO-Client-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Socket.IO-Client-Swift.modulemap"; sourceTree = "<group>"; };
@@ -655,7 +657,7 @@
 		7E90DA1C4EDB0784A03A6C68E0CE9E94 /* UserDefaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		7F91840ED79F42D36FD3A932CEBC1579 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		7FE606F798CBE85796188B7000D119CE /* IQKeyboardManager+UITextFieldViewNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UITextFieldViewNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UITextFieldViewNotification.swift"; sourceTree = "<group>"; };
-		801A4AEFA626A65D69DAD69DBAA2D767 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		801A4AEFA626A65D69DAD69DBAA2D767 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		8052030103DEBFE0D6CAF2457EA123EB /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		8214D25E7B0347A2F721E8DBF492F572 /* ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ObjectMapper-dummy.m"; sourceTree = "<group>"; };
 		828F1C480D9959D94E2868CE1084677F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -667,7 +669,7 @@
 		87CF375B179297BC1807936F580448D1 /* Socket.IO-Client-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Socket.IO-Client-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		8882EDA803165C6E70EDDD6CF76D1C9D /* AuthenticationChallengeResponsable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationChallengeResponsable.swift; path = Sources/Networking/AuthenticationChallengeResponsable.swift; sourceTree = "<group>"; };
 		891B2270823847ED23F2ECFC28F935EC /* Starscream */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Starscream; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		897098D60EBA00901684FDBEAAF6C1AB /* Nunito-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		897098D60EBA00901684FDBEAAF6C1AB /* Nunito-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		89ACEF9811388FCAB46668A712A1FD28 /* BrandCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = BrandCollectionViewCell.xib; sourceTree = "<group>"; };
 		8A2A128F3FAE37601751167FDC47182A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		8B5C9755413FACCC79A95B158AED630B /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = Sources/URLTransform.swift; sourceTree = "<group>"; };
@@ -677,7 +679,7 @@
 		8BEE5523498F4EA21475EF4574FE646C /* ReceiverTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReceiverTableViewCell.swift; sourceTree = "<group>"; };
 		8C424E02D22CA288E960B4796A92E67C /* dummyCTA.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = dummyCTA.png; sourceTree = "<group>"; };
 		8D03CB8E35AC4800E54ECC9D265231F5 /* StringHTTPHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringHTTPHandler.swift; path = Sources/Framer/StringHTTPHandler.swift; sourceTree = "<group>"; };
-		8D1413E524161261E230DA2CE44A4EC4 /* B2CSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = B2CSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8D1413E524161261E230DA2CE44A4EC4 /* B2CSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = B2CSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8E91268CF7871190EC6C9553EEA5A786 /* dummy2.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = dummy2.png; sourceTree = "<group>"; };
 		8E98BA17153DCE0A0F5F4FD859CAC798 /* GrowingTextView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GrowingTextView-Info.plist"; sourceTree = "<group>"; };
 		8EA6EE33A9366771421803DA53FCAA72 /* SocketEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngine.swift; path = Source/SocketIO/Engine/SocketEngine.swift; sourceTree = "<group>"; };
@@ -707,7 +709,7 @@
 		9D320EE5CC5478022876C5F446DFCDA3 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
 		9D3AD63A3416AFD96600A8B8E717DC92 /* IQKeyboardManager+Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Internal.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Internal.swift"; sourceTree = "<group>"; };
 		9D7488B00D414B99C238610A22652D69 /* Starscream-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DB6F6C924583F594F504C048FBD3334 /* TVMonogramView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TVMonogramView+Kingfisher.swift"; path = "Sources/Extensions/TVMonogramView+Kingfisher.swift"; sourceTree = "<group>"; };
 		9E3E280EEA8E6698AE6D5091A923C723 /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/General/Kingfisher.swift; sourceTree = "<group>"; };
 		9EAE8B68C79E236E67BA71EEBDBD48B5 /* Logs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
@@ -727,7 +729,7 @@
 		A739B8D085E500FD0C9C6C5CBE703717 /* SocketIOClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClient.swift; path = Source/SocketIO/Client/SocketIOClient.swift; sourceTree = "<group>"; };
 		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A925DA3498956C5385C15770DF28CFE0 /* ImageDownloaderDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloaderDelegate.swift; path = Sources/Networking/ImageDownloaderDelegate.swift; sourceTree = "<group>"; };
-		A9917D949C7BAB8683CCF55949B1903C /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		A9917D949C7BAB8683CCF55949B1903C /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		AA39C6D2448DC5A9AD18DDA3C96A1A0F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		AB5A049DF363F1077625214AB203B0E2 /* Starscream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Starscream.release.xcconfig; sourceTree = "<group>"; };
 		AC3E3F78A56D30CE094E2F126039D075 /* Starscream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Starscream.modulemap; sourceTree = "<group>"; };
@@ -767,17 +769,17 @@
 		BC635282CC03612F16E88303769A9EF1 /* B2CBaseViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = B2CBaseViewController.swift; sourceTree = "<group>"; };
 		BE1B2A3BF0DB51929739274F301EF6FB /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		BF16A6DA1F93BB841D17206D36DB6E71 /* KFImageOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KFImageOptions.swift; path = Sources/SwiftUI/KFImageOptions.swift; sourceTree = "<group>"; };
-		BF17A8FD3049F4D3FBC1F3C702C11CE8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		BF17A8FD3049F4D3FBC1F3C702C11CE8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BF227508D27DDF480D4B3464310955DD /* Pods-B2CSDK_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-B2CSDK_Example-Info.plist"; sourceTree = "<group>"; };
 		C07BEF0CE5DECC5BDCAC8625BF2FFA4B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		C137866CF8AC3E6BAEC00BDA38DB22FF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		C137866CF8AC3E6BAEC00BDA38DB22FF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C1A73B0E9BEB5DE31E05F57C47866A05 /* CommentsModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommentsModel.swift; sourceTree = "<group>"; };
-		C205035C0473F0D2ABF1DC8FA5C04B6A /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		C205035C0473F0D2ABF1DC8FA5C04B6A /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		C2BEB9982F85330DD7C8F3103DD67279 /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C432C0E39CB6D7118579D2D5639F27BB /* B2CSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = B2CSDK.debug.xcconfig; sourceTree = "<group>"; };
 		C4FE652C19882885FC6035D1491EE709 /* IQKeyboardManager+UIKeyboardNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UIKeyboardNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UIKeyboardNotification.swift"; sourceTree = "<group>"; };
-		C6156D6CA5ACB09739417D0917A95E77 /* splash_video.mp4 */ = {isa = PBXFileReference; includeInIndex = 1; path = splash_video.mp4; sourceTree = "<group>"; };
+		C6156D6CA5ACB09739417D0917A95E77 /* splash_video.mp4 */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = splash_video.mp4; sourceTree = "<group>"; };
 		C6A8AC6FF257D2A35041F228C2ED4C01 /* TableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		C79ABC59D596F3D42674B16A63AE2E18 /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = Sources/ToJSON.swift; sourceTree = "<group>"; };
 		C816ECA5647672AFEC405EA58997FCB9 /* Kingfisher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.release.xcconfig; sourceTree = "<group>"; };
@@ -849,7 +851,7 @@
 		FB6CE3D4C756D825DFFBEEFE3BFAE4A9 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionHelpers.swift; path = Sources/Utility/ExtensionHelpers.swift; sourceTree = "<group>"; };
 		FC2E5B4414FA1D2DAD8905090ACE18A0 /* APIConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		FCD1C4B1B8BE02C0122B47DE29C61CC1 /* Pods-B2CSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-B2CSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		FCFE80CA1076FB6AD2BB1C126C87F158 /* Nunito-Medium.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
+		FCFE80CA1076FB6AD2BB1C126C87F158 /* Nunito-Medium.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
 		FEBA43755482A4D00AA7F2F4165D59AE /* IQKeyboardManager+Toolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Toolbar.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Toolbar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -967,7 +969,6 @@
 				8B6170DC14ABB5082F14AF64A3E3449E /* GrowingTextView.swift */,
 				9970085E076BB5CADE0D1769C485C3D0 /* Support Files */,
 			);
-			name = GrowingTextView;
 			path = GrowingTextView;
 			sourceTree = "<group>";
 		};
@@ -1013,7 +1014,6 @@
 				C1A73B0E9BEB5DE31E05F57C47866A05 /* CommentsModel.swift */,
 				4275F224342C50A6F8F9B28616FB91A6 /* LiveScreenModel.swift */,
 			);
-			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -1058,7 +1058,6 @@
 				0D9D034A30E5483C62E609F3501E8DBF /* Validation.swift */,
 				8B99DDDCEB6049C8EB89A8A45D78CB1C /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1087,7 +1086,6 @@
 				06B2FB7A1FA6BB2D2619D26F602ADA2E /* WSEngine.swift */,
 				8A2E70AE67AACDD6726A78CB17954276 /* Support Files */,
 			);
-			name = Starscream;
 			path = Starscream;
 			sourceTree = "<group>";
 		};
@@ -1100,6 +1098,7 @@
 				860AD222F3C3AE06BA2BFF9C194A7AA7 /* StringConstants.swift */,
 				CC9E4ACF883EF3364D529B58353EAADF /* UIUtils.swift */,
 				E83DBCC17CCF0F29594509F27DFE62A7 /* Fonts */,
+				355ADE40285371C50081D189 /* JwtModel.swift */,
 			);
 			name = Utility;
 			path = B2CSDK/Classes/Utility;
@@ -1121,7 +1120,6 @@
 				0DE3A2596959E9F2FD95F5C7DDED8A8A /* ListProtocols.swift */,
 				6817B3003F0AADAD3F42B250F757C79A /* ListViewModel.swift */,
 			);
-			name = ViewModel;
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
@@ -1198,7 +1196,6 @@
 				C6156D6CA5ACB09739417D0917A95E77 /* splash_video.mp4 */,
 				5601DBD98383834E794F512AB5F9BFD1 /* wow@3x.png */,
 			);
-			name = Images;
 			path = Images;
 			sourceTree = "<group>";
 		};
@@ -1222,7 +1219,6 @@
 				B326D36BA87DF6D1D018715A3EDC90A2 /* LiveScreenService.swift */,
 				4A22D0782C3473C163EB86C8FC8B32F3 /* LiveScreenViewModel.swift */,
 			);
-			name = ViewModel;
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
@@ -1302,7 +1298,6 @@
 				485A4F72537787C5E29B0E06ABB5BD8D /* UpcomingShowCollectionViewCell.swift */,
 				349DF3A9AA32C93B1E3DCBD636D33235 /* UpcomingShowsTableViewCell.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -1364,7 +1359,6 @@
 				322134EB2820274887F7877AD82DB806 /* IQUIViewController+Additions.swift */,
 				46CF0978F39CA8F40907C45F0AF0A015 /* Support Files */,
 			);
-			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -1397,7 +1391,6 @@
 				72F91435AAF48B40B263768B34261CA7 /* SocketTypes.swift */,
 				D2C93CAC66DC9ECCC256426CC8EA15E6 /* Support Files */,
 			);
-			name = "Socket.IO-Client-Swift";
 			path = "Socket.IO-Client-Swift";
 			sourceTree = "<group>";
 		};
@@ -1453,7 +1446,6 @@
 				801A4AEFA626A65D69DAD69DBAA2D767 /* Nunito-Regular.ttf */,
 				A9917D949C7BAB8683CCF55949B1903C /* Nunito-SemiBold.ttf */,
 			);
-			name = Fonts;
 			path = Fonts;
 			sourceTree = "<group>";
 		};
@@ -1464,7 +1456,6 @@
 				E0A9DBD7AD8D082E77BD81FA543C281C /* MBProgressHUD.m */,
 				60236494A69D4044D97F7E3496EA33BD /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1495,7 +1486,6 @@
 				D7788A9E30B29DACA7C9E9D916FA5142 /* TrendingVideosTableViewCell.xib */,
 				3BAC953D9E7131B59564260D3941BB6A /* UpcomingShowsTableViewCell.xib */,
 			);
-			name = TableViewCell;
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
@@ -1600,7 +1590,6 @@
 				F7B64BE236AE777BD204502968BAD55B /* WKInterfaceImage+Kingfisher.swift */,
 				EAA0257625B8E5CDA8190606E1779630 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -1640,7 +1629,6 @@
 				620793BCBDA1902056B7607912BBD148 /* TrendingVideoCollectionViewCell.xib */,
 				B5B0597E149EB7B38B7B7B35E6134CAA /* UpcomingShowCollectionViewCell.xib */,
 			);
-			name = CollectionView;
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
@@ -1653,7 +1641,6 @@
 				897098D60EBA00901684FDBEAAF6C1AB /* Nunito-Regular.ttf */,
 				1BBBDB8AED3B0488ACDB368F1836C618 /* Nunito-SemiBold.ttf */,
 			);
-			name = Fonts;
 			path = Fonts;
 			sourceTree = "<group>";
 		};
@@ -1662,7 +1649,6 @@
 			children = (
 				D1DE17BC2D0E775BA0165DDFCB6C071A /* ListModel.swift */,
 			);
-			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -1757,7 +1743,6 @@
 				8B5C9755413FACCC79A95B158AED630B /* URLTransform.swift */,
 				7347076D6B27F639A2DF244206310902 /* Support Files */,
 			);
-			name = ObjectMapper;
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
@@ -2334,6 +2319,7 @@
 				DA00D38F1DC0FAF6B3BA3BAE19BA74E8 /* Nunito-ExtraBold.ttf in Sources */,
 				6219129C2A0B6820A840D129CB8E76F7 /* Nunito-Medium.ttf in Sources */,
 				48576441BB72ED992926E9E1E3ED3A26 /* Nunito-Regular.ttf in Sources */,
+				355ADE41285371C50081D189 /* JwtModel.swift in Sources */,
 				9B57C079BE8E382F49C7FBC750063199 /* Nunito-SemiBold.ttf in Sources */,
 				74A583AE73E23BD227C0EAD233DFBB96 /* PaddingTextField.swift in Sources */,
 				50849923878AEAEAE96FF500DB174320 /* ProductCollectionViewCell.swift in Sources */,
@@ -3311,8 +3297,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
