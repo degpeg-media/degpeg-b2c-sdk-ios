@@ -35,7 +35,7 @@ TODO: Add long description of the pod here.
   
   
    s.resource_bundles = {
-     'B2CSDK' => ['B2CSDK/Assets/Images/*.png', 'B2CSDK/Assets/Images/*.xcassets', 'B2CSDK/Assets/Images/*.mp4',  'B2CSDK/Assets/*.xib', 'B2CSDK/Assets/TableViewCell/*.xib', 'B2CSDK/Assets/CollectionView/*.xib', 'B2CSDK/Classes/Degpeg.storyboard', 'B2CSDK/Classes/*.xib', 'B2CSDK/Assets/Fonts/*.ttf', 'B2CSDK/Assets/Fonts/Nunito-Bold.ttf']
+     'B2CSDK' => ['B2CSDK/Assets/Images/*.png', 'B2CSDK/Assets/Images/*.pdf',  'B2CSDK/Assets/Images/*.xcassets', 'B2CSDK/Assets/Images/*.mp4',  'B2CSDK/Assets/*.xib', 'B2CSDK/Assets/TableViewCell/*.xib', 'B2CSDK/Assets/CollectionView/*.xib', 'B2CSDK/Classes/Degpeg.storyboard', 'B2CSDK/Classes/*.xib', 'B2CSDK/Assets/Fonts/*.ttf', 'B2CSDK/Assets/Fonts/Nunito-Bold.ttf']
    }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

@@ -23,6 +23,7 @@
   "resource_bundles": {
     "B2CSDK": [
       "B2CSDK/Assets/Images/*.png",
+      "B2CSDK/Assets/Images/*.pdf",
       "B2CSDK/Assets/Images/*.xcassets",
       "B2CSDK/Assets/Images/*.mp4",
       "B2CSDK/Assets/*.xib",
