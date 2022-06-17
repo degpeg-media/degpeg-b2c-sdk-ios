@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.5.0)
-  - B2CSDK (0.1.0):
+  - B2CSDK (0.0.1):
     - Alamofire
     - GrowingTextView (= 0.7.2)
     - IQKeyboardManagerSwift
@@ -37,7 +37,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
-  B2CSDK: 32285c4b962b312ecf4166a67f1a86f8c76b00a5
+  B2CSDK: 1471427266eea82c62e5b3941c7b3803dda4c4f6
   GrowingTextView: 876bf42005b5e4a4fd740597db12caaf41f0fe6c
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c

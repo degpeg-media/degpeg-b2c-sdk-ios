@@ -27,9 +27,9 @@ extension LiveScreenViewController: LiveScreenViewControllerProtocol {
     }
     func updateProduct(product: Product) {
         if productList.count == 0 {
-            productList.append(product)
-        } else {
             productList = [product]
+        } else {
+            productList.append(product)
         }
         collectionView.reloadData()
     }

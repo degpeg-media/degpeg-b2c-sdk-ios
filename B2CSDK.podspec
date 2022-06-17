@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'B2CSDK'
-  s.version          = '0.1.0'
+  s.version          = '0.0.2'
   s.summary          = 'Degpeg B2CSDK for clients'
 
 # This description is used to generate tags and improve search results.
@@ -29,13 +29,13 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '13.0'
-  s.Swift.version = '5.0'
+#  s.Swift.version = '5.0'
   s.swift_version = '5.0'
   s.source_files = 'B2CSDK/Classes/**/*'
   
   
    s.resource_bundles = {
-     'B2CSDK' => ['B2CSDK/Assets/Images/*.png', 'B2CSDK/Assets/Images/*.xcassets', 'B2CSDK/Assets/Images/*.mp4',  'B2CSDK/Assets/*.xib', 'B2CSDK/Assets/TableViewCell/*.xib', 'B2CSDK/Assets/CollectionView/*.xib', 'B2CSDK/Classes/Degpeg.storyboard', 'B2CSDK/Classes/*.xib', 'B2CSDK/Assets/Fonts/*.ttf', 'B2CSDK/Assets/Fonts/Nunito-Bold.ttf']
+     'B2CSDK' => ['B2CSDK/Assets/Images/*.png', 'B2CSDK/Assets/Images/*.pdf',  'B2CSDK/Assets/Images/*.xcassets', 'B2CSDK/Assets/Images/*.mp4',  'B2CSDK/Assets/*.xib', 'B2CSDK/Assets/TableViewCell/*.xib', 'B2CSDK/Assets/CollectionView/*.xib', 'B2CSDK/Classes/Degpeg.storyboard', 'B2CSDK/Classes/*.xib', 'B2CSDK/Assets/Fonts/*.ttf', 'B2CSDK/Assets/Fonts/Nunito-Bold.ttf']
    }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

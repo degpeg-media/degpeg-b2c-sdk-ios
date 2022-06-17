@@ -28,6 +28,7 @@ class ReceiverTableViewCell: UITableViewCell {
     
     func setupCellData(message: ChatMessage) {
         messageLabel.text = message.message
+        nameLabel.text = message.userId?.nameToInitials()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -34,11 +34,12 @@ class HeaderCollectionViewCell: UICollectionViewCell {
     
     func configureCell(data: RowData) {
         
-        if data.status == .live || data.status == .completed{
-            playImage.isHidden = false
-        }else {
-            playImage.isHidden = true
-        }
+//        if data.status == .live || data.status == .completed{
+//            playImage.isHidden = false
+//        }else {
+//            playImage.isHidden = true
+//        }
+        playImage.isHidden = false
         statusLabel.text = data.status?.status
         titleLabel.text = data.name
         descriptionLabel.text = data.description
