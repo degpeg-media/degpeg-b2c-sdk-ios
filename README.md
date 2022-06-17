@@ -57,7 +57,7 @@ Check below code snippet
         //
         let appId = "your-app-id"
         let secretKey = "your-app-secret"
-        let manager = DegpegManager.init(appID: appId, secret: secretKey, userId: "6278c4556cb38a7a9c10df6e", userName: "Raj Kadam", influencerID: "6278c4546cb38a7a9c10df6d")
+        let manager = DegpegManager.init(appID: appId, secret: secretKey, userId: "your-user-id", userName: "Raj Kadam", influencerID: "your-influencer-id")
         let vc = manager.getRootViewController() 
         
 ```
