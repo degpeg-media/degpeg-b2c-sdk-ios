@@ -39,9 +39,28 @@ pod install   or pod install --repo-update
 B2CSDK is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```ruby
+```
 pod 'B2CSDK'
 ```
+## Integration of B2CSDK in Your project
+    1. Import SDK in your swift file
+        ```
+        import B2CSDK
+        ```
+    2. Get the SDK root controller and you can present it on your view or you can add it in you app’s TabBar view
+
+    Check below code snippet 
+        ```
+        // 1. app id
+        // 2. content publisher Id / content prover id
+        // 3. app secret
+        //
+        let appId = "your-app-id"
+        let secretKey = "your-app-secret"
+        let manager = DegpegManager.init(appID: appId, secret: secretKey, userId: "6278c4556cb38a7a9c10df6e", userName: "Raj Kadam", influencerID: "6278c4546cb38a7a9c10df6d")
+        let vc = manager.getRootViewController() 
+        
+    ```
 
 ## Author
 
