@@ -8,7 +8,7 @@
 import UIKit
 
 class BrandCollectionViewCell: UICollectionViewCell {
-    
+    // brand logo image
     @IBOutlet weak var brandImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
