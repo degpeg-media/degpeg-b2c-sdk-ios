@@ -6,6 +6,7 @@
 //
            
 import UIKit
+import CloudKit
 
  class ListViewController: B2CBaseViewController {
      var viewModel: ListViewModelProtocol?
@@ -56,14 +57,27 @@ import UIKit
      }
      
      private func getScreenData(spinnerFlag: Bool){
-         viewModel?.getJWT(completionHandler: { [weak self] flag in
-             guard let self = self else {return}
-             if flag {
-                 self.viewModel?.fetchAllCategories()
-                 self.viewModel?.getContentPublishers(for: DEFAULT_ContentPublisherId, showSpinnerFlag: spinnerFlag)
-             }
-         })
+         if JWTEnabled {
+             viewModel?.getJWT(completionHandler: { [weak self] flag in
+                 guard let self = self else {return}
+                 if flag {
+                     
+                     self.callAllAPI(spinnerFlag: spinnerFlag)
+                 }
+             })
+         }else {
+             self.callAllAPI(spinnerFlag: spinnerFlag)
+         }
          
+     }
+     
+     private func callAllAPI(spinnerFlag: Bool) {
+         self.viewModel?.fetchAllCategories()
+         if Current_User_Role == .publisher {
+             self.viewModel?.getContentPublishers(for: DEFAULT_ContentPublisherId, showSpinnerFlag: spinnerFlag)
+         }else {
+             self.viewModel?.getContentProviderVideos(for: DEFAULT_ContentProviderId)
+         }
      }
      
      //

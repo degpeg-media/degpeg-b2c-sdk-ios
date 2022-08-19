@@ -214,6 +214,20 @@ class APIClient: NSObject {
         }
     }
     
+    func getHeader() -> HTTPHeaders? {
+        if JWTEnabled {
+            var header = HTTPHeaders()
+            if let token = B2CUserDefaults.getAccessToken() {
+                header.add(HTTPHeader(name: "Authorization", value: "Bearer \(token)"))
+                return header
+            }else {
+                return nil
+            }
+        }else {
+            return nil
+        }
+    }
+    
     func checkTokenExpired(result: Any) -> Bool {
         if let resultDict = result as? [String: Any] {
             if let details = resultDict["details"] as? [String: Any], let isExpire = details["tokenExpired"] as? Bool {

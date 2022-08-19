@@ -33,7 +33,7 @@ struct HomeService {
     }
     
     func getContentPublisherDetails(contentPublisherId: String, completionHandler: @escaping (ContentPublishersDetails?, ServiceError?) -> Void) {
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         let endPoint = "\(APIConstants.ContentPublisher)/\(contentPublisherId)"
         APIClient.getInstance().requestJson( endPoint, .get, parameters: nil, headers: header) { (result, error, isExpire, code) in
             if isExpire {
@@ -54,7 +54,7 @@ struct HomeService {
     func getContentProviderVideos(contentProviderId: String, completionHandler: @escaping ([ContentProviderDetailsModel]?, ServiceError?) -> Void) {
       
 //        let fil = "https://dev.api.degpeg.com/content-providers/${id}/live-sessions?filter={"include":[{"relation":"liveSessionCategory"}],"where":{"status":{"neq":"deleted"}}}"
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         let endPoint = "\(APIConstants.ContentProviders)/\(contentProviderId)/live-sessions"
 
         let neqDict = ["neq":"deleted"]
@@ -82,7 +82,7 @@ struct HomeService {
     // MARK: - Get Channel Details
     func getChannelDetails(for channelID: String, completionHandler: @escaping (ChannelData?, ServiceError?) -> Void) {
         let endPoint = "\(APIConstants.Channels)/\(channelID)"
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         APIClient.getInstance().requestJson(endPoint, .get, headers: header) { result, error, refresh, code in
             if let result = result {
                 let session = Mapper<ChannelData>().map(JSONObject: result as! [String: Any])
@@ -96,7 +96,7 @@ struct HomeService {
     // MARK: - Get Categories
     func getAllCategories(completionHandler: @escaping ([CategoryData]?, ServiceError?) -> Void) {
         let endPoint = "\(APIConstants.CategoriesList)"
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         APIClient.getInstance().requestJson( endPoint, .get, parameters: nil, encoding: URLEncoding.default, headers: header) { (result, error, isExpire, code) in
             if isExpire {
                 completionHandler(nil, ServiceError.init(statusCode: 0, message: "Token exp"))
@@ -117,7 +117,7 @@ extension HomeService {
     func getUserDetails(param: [String: Any], completionHandler: @escaping ([UserDetails]?, ServiceError?) -> Void) {
         
         let endPoint = "\(APIConstants.UserDetail)"
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         APIClient.getInstance().requestJson( endPoint, .get, parameters: param, encoding: URLEncoding.default, headers: header) { (result, error, isExpire, code) in
             if isExpire {
                 completionHandler(nil, ServiceError.init(statusCode: 0, message: "Token exp"))

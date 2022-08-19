@@ -32,26 +32,35 @@ class Socket_IOManager {
     func connect() {
             disconnectSocket()
             socketManager = SocketManager(socketURL: URL(string: generateURL())!, config: [.log(false), .compress, .forcePolling(false)])
+        if Current_User_Role == .publisher {
             socketManager?.setConfigs([.connectParams(getConnectionParams(for: DEFAULT_ContentPublisherId)), .forcePolling(false)])
             socket = socketManager!.socket(forNamespace: "/content-publisher")
-            //socket = socketManager!.socket(forNamespace: (userDetails.userRole == .contentProvider) ? "/content-provider" : "/influencer")
+        }else {
+            socketManager?.setConfigs([.connectParams(getConnectionParams(for: DEFAULT_ContentProviderId)), .forcePolling(false)])
+            socket = socketManager!.socket(forNamespace: "/content-provider")
+        }
             socketListeners(socket: socket!)
             socket?.connect()
         
     }
     
     func getConnectionParams(for id: String) -> [String: Any] {
-        //        if (user.userRole == .contentProvider) {
-        //            return ["contentProviderId" : user.contentProviderId ?? ""]
-        //        }
-        return ["contentPublisherId": id]//["influencerId": influencerID]
+        if Current_User_Role == .provider {
+            return ["contentProviderId" : id]
+        }else {
+            return ["contentPublisherId": id]//["influencerId": influencerID]
+        }
     }
     
     func generateURL() -> String {
+        if Current_User_Role == .publisher {
+            let base_url = APIConstants.BaseUrl.socketURL + "content-publisher" //"influencer"//
+            return base_url
+        }else {
+            let base_url = APIConstants.BaseUrl.socketURL + "content-provider"
+            return base_url
+        }
         
-        let base_url = APIConstants.BaseUrl.socketURL + "content-publisher" //"influencer"//
-        
-        return base_url
     }
     
     func disconnectSocket() {
@@ -132,12 +141,27 @@ class Socket_IOManager {
     }
     
     func socketEmit(emitName: String, params: [String: Any]) {
-        
+        if let req = convertToJson(input: params) {
         if let socket = socket, socket.status == .connected {
             Logs.print("Emit: \(emitName)\nParams: \(params)")
-            socket.emit(emitName, params) {
+            socket.emit(emitName, req) {
                 Logs.print("Message Emit")
             }
+        }
+        }else {
+            Logs.print("Input is not convertable")
+        }
+    }
+    
+    func convertToJson(input: [String: Any]) -> Data?{
+        let myJson: Data
+        do {
+            print(input)
+            myJson = try JSONSerialization.data(withJSONObject: input, options: [])
+            return myJson
+        }catch {
+            print("Got error while converting to JSON obj")
+            return nil
         }
     }
     
@@ -147,10 +171,7 @@ class Socket_IOManager {
             return result
         }
         return nil
-    }
-    
-    
-    
+    }  
     enum Events {
         
         case chatMessage
@@ -158,7 +179,7 @@ class Socket_IOManager {
         case viewCount
         case joinRoom
         case leaveRoom
-        
+        case purchaseCount
         var emitterName: String {
             switch self {
             case .chatMessage:
@@ -171,6 +192,8 @@ class Socket_IOManager {
                 return "join"
             case .leaveRoom:
                 return "leave"
+            case .purchaseCount:
+                return "update_purchase"
             }
             
         }
@@ -187,6 +210,8 @@ class Socket_IOManager {
                 return "join"
             case .leaveRoom:
                 return "leave"
+            case .purchaseCount:
+                return "purchase_count_updated"
             }
         }
         

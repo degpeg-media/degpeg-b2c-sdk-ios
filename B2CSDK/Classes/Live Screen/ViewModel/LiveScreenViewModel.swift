@@ -90,7 +90,8 @@ final class LiveScreenViewModel: LiveScreenViewModelProtocol {
                 //UIUtils.hideHUD(view: self.viewController?.currentView)
                 if let result = result{
                     print("Message Sent successfully", result)
-                    self.sendMessageThroughSocket(request: param)
+                    let sessionMsgReq = self.createSendMessageRequestForSession(sessionId: liveSessionId, message: comment)
+                    self.sendMessageThroughSocket(request: sessionMsgReq)
                     if let message = self.getChatMessageObject(req: param) {
                         self.viewController?.appendNewMessage(message: message)
                     }
@@ -113,6 +114,13 @@ final class LiveScreenViewModel: LiveScreenViewModelProtocol {
        }
     }
     
+    func createSendMessageRequestForSession(sessionId: String, message: String) -> [String: Any]{
+        let date = Date.init()
+        let currentTime = date.serverRequestDateString()
+        let req = ["session_id": sessionId, "time_stamp": currentTime, "message": message, "userId": B2CUserDefaults.getUserName() ?? "User"]
+        return req as [String : Any]
+    }
+    
     func createSendMessageRequest(sessionId: String, message: String) -> [String: Any]{
         //"username": B2CUserDefaults.getUserName(),
         let date = Date.init()
@@ -133,9 +141,35 @@ final class LiveScreenViewModel: LiveScreenViewModelProtocol {
                 UIUtils.hideHUD(view: self.viewController?.currentView)
                 if let vcount = viewCount, let count = vcount.count{
                     print("view Count", count)
-                    let req = self.createViewCountObject(sessionId: liveSessionId, count: count)
+                    let req = self.createCountObject(sessionId: liveSessionId, count: count)
                    self.sendMessageThroughSocket(name: Socket_IOManager.Events.viewCount.emitterName,request: req)
                     self.viewController?.updateViewCount(viewCount: vcount)
+                } else {
+                    
+                    self.viewController?.showError(errorString: error?.message ?? "Something went wrong")
+                }
+            }
+        }else {
+            self.viewController?.showError(errorString: AlertDetails.NoInternet)
+        }
+
+    }
+    
+    // MARK: - Get PurchaseCount
+    func getPurchaseCount(for liveSessionId: String) {
+        if NetworkManager.isConnectedToInternet {
+            var filter = ViewCountFilter.init()
+            let param = filter.createFilter(id: liveSessionId)
+            
+            UIUtils.showHUD(view: viewController?.currentView)
+            LiveScreenService().fetchPurchaseCount(param: param) { [weak self] purhaseCount, error in
+                guard let self = self else { return }
+                UIUtils.hideHUD(view: self.viewController?.currentView)
+                if let purhaseCount = purhaseCount, let count = purhaseCount.count{
+                    print("Purchase Count", count)
+                    let req = self.createCountObject(sessionId: liveSessionId, count: count)
+                   self.sendMessageThroughSocket(name: Socket_IOManager.Events.purchaseCount.emitterName,request: req)
+                    self.viewController?.updatePurchaseCount(count: purhaseCount)
                 } else {
                     
                     self.viewController?.showError(errorString: error?.message ?? "Something went wrong")
@@ -210,9 +244,10 @@ final class LiveScreenViewModel: LiveScreenViewModelProtocol {
         }
     }
     
-    func createViewCountObject(sessionId: String, count: Int) -> [String: Any] {
+    func createCountObject(sessionId: String, count: Int) -> [String: Any] {
         return ["session_id": sessionId, "count": count] as [String: Any]
     }
+    
     
     func createViewCountRequest(sessionId: String) -> [String: Any]{
         let date = Date.init()
@@ -236,5 +271,9 @@ extension LiveScreenViewModel {
     
     func leaveRoom(sessionId: String) {
         Socket_IOManager.shared.socketEmit(emitName: Socket_IOManager.Events.leaveRoom.emitterName, params: ["room": sessionId])
+    }
+    
+    func updatePurchaseCount(sessioId: String) {
+        
     }
 }

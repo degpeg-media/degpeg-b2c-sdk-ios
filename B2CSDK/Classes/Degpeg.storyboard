@@ -96,7 +96,17 @@
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdv-c0-InK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Pj4-v4-0FO">
+                                        <rect key="frame" x="188.5" y="389.5" width="37" height="37"/>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Pj4-v4-0FO" firstAttribute="centerX" secondItem="jdv-c0-InK" secondAttribute="centerX" id="SVY-5B-8g0"/>
+                                    <constraint firstItem="Pj4-v4-0FO" firstAttribute="centerY" secondItem="jdv-c0-InK" secondAttribute="centerY" constant="-40" id="Ud6-g7-sMb"/>
+                                </constraints>
                             </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AW5-KO-D5O">
                                 <rect key="frame" x="0.0" y="686" width="414" height="210"/>
@@ -292,7 +302,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="bag.pdf"/>
+                                                <state key="normal" image="bag_icon"/>
                                                 <connections>
                                                     <action selector="bagAction:" destination="hGD-LG-Z6H" eventType="touchUpInside" id="l9b-o1-MFB"/>
                                                 </connections>
@@ -447,6 +457,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="P5M-Br-0g0"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="Pj4-v4-0FO" id="ZA5-gm-fd5"/>
                         <outlet property="btnSend" destination="X3q-O4-BDH" id="m2i-Ow-jVb"/>
                         <outlet property="collectionView" destination="4G5-OD-nC7" id="YwF-yd-0Is"/>
                         <outlet property="collectionViewHeightConstraint" destination="6CM-Ys-b33" id="ys7-Y4-zdU"/>
@@ -474,13 +485,8 @@
             <point key="canvasLocation" x="1212" y="346"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="ViI-0M-EOB">
-            <size key="intrinsicContentSize" width="-1" height="30"/>
-        </designable>
-    </designables>
     <resources>
-        <image name="bag.pdf" width="128" height="128"/>
+        <image name="bag_icon" width="32" height="32"/>
         <image name="eye" width="18" height="18"/>
         <image name="like_icon.png" width="32" height="32"/>
         <image name="multiply" catalog="system" width="128" height="111"/>

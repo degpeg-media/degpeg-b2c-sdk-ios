@@ -21,6 +21,7 @@ protocol LiveScreenViewControllerProtocol: AnyObject {
     func updateCommentsArray(comments: [ChatMessage])
     func appendNewMessage(message: ChatMessage)
     func updateViewCount(viewCount: ViewCountModel)
+    func updatePurchaseCount(count: ViewCountModel)
     func updateProduct(product: Product)
     func showError(errorString: String)
     func animateLikeView()

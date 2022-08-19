@@ -10,6 +10,13 @@ import Kingfisher
 // MARK: - LiveScreenViewControllerProtocol
 extension LiveScreenViewController: LiveScreenViewControllerProtocol {
     
+    func updatePurchaseCount(count: ViewCountModel)
+    {
+        if let count = count.count {
+            purchaseCount = count
+        }
+    }
+    
     func animateLikeView(){
         if let emoji = "❤".emojiToImage() {
             likeAnimationView.animate(icon: emoji)
@@ -104,6 +111,7 @@ extension LiveScreenViewController: LiveScreenActionProtocols {
     func buyProductAction(product: Product?) {
         
         if let product = product, let urlString = product.purchase_link {
+            
             if !urlString.hasPrefix("http") {
                 openSocialLinks(urlString: "https://\(urlString)")
             }else{

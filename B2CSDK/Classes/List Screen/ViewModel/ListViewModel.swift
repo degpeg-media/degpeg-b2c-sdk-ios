@@ -74,6 +74,7 @@ final class ListViewModel: ListViewModelProtocol {
     func getAllHomeData() {
         videos = [ContentProviderDetailsModel]()
         if let providers = contentPublisher?.contentProviders, providers.count > 0 {
+            print("Content Providers", providers)
             getContentProviderVideos(for: providers, index: 0)
             
         }
@@ -111,6 +112,27 @@ final class ListViewModel: ListViewModelProtocol {
         
     }
      
+    func getContentProviderVideos(for providerID: String) {
+        if NetworkManager.isConnectedToInternet {
+            UIUtils.showHUD(view: viewController?.currentView)
+            HomeService().getContentProviderVideos(contentProviderId: providerID) { [weak self] result, error in
+                guard let self = self else { return }
+                if let list = result {
+                    if !list.isEmpty {
+                        self.videos.append(contentsOf: list)
+                    }
+                    self.createHomeData()
+                    
+                } else {
+                    self.viewController?.showError(errorString: error?.message ?? "Something went wrong")
+                }
+            }
+        }else {
+            self.viewController?.showError(errorString: AlertDetails.NoInternet)
+        }
+        
+    }
+    
     func createHomeData() {
         
         
@@ -132,7 +154,7 @@ final class ListViewModel: ListViewModelProtocol {
                         myGroup.leave()
                     guard let self = self else { return }
                     if let channel = channel {
-                        if channel.isWebToStream {
+                        if channel.isWebToStream || channel.isMobileToStream {
                             let videoUrl = video.webVideoUrl ?? ""
                             let oneRecord = RowData.init(id: video.id, products: video.products, sessionDate: video.dateTime?.stringToDate() ?? Date(), videoUrl: videoUrl, status: video.status, imageUrl: video.bannerUrl, sessionDataId: video.sessionDataId, contentProviderId: video.contentProviderId, liveSessionCategory: video.liveSessionCategory, streamKey: video.streamKey, sessionType: video.sessionType, sessionPassCode: video.sessionPassCode, name: video.name, description: video.description, userName: nil, userImage: nil, userID: nil, userContentProviderId: nil)
                             rowData.append(oneRecord)

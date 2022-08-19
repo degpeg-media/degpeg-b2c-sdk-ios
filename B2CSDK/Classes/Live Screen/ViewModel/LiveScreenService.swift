@@ -13,7 +13,7 @@ struct LiveScreenService {
     func getUserDetails(param: [String: Any], completionHandler: @escaping ([UserDetails]?, ServiceError?) -> Void) {
         
         let endPoint = "\(APIConstants.UserDetail)"
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         APIClient.getInstance().requestJson( endPoint, .get, parameters: param, encoding: URLEncoding.default, headers: header) { (result, error, isExpire, code) in
             if isExpire {
                 completionHandler(nil, ServiceError.init(statusCode: 0, message: "Token exp"))
@@ -31,7 +31,7 @@ struct LiveScreenService {
     // MARK: - Get Session Details
     func getSessionDetails(for sessionId: String, completionHandler: @escaping (Session?, ServiceError?) -> Void) {
         let endPoint = "\(APIConstants.LiveSessions)/\(sessionId)"
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         APIClient.getInstance().requestJson(endPoint, .get, headers: header) { result, error, refresh, code in
             if let result = result {
                 let session = Mapper<Session>().map(JSONObject: result as! [String: Any])
@@ -45,7 +45,7 @@ struct LiveScreenService {
     func getAllMessages(param: [String: Any], completionHandler: @escaping ([ChatMessage]?, ServiceError?) -> Void) {
         
         let endPoint = "\(APIConstants.LiveSessionComments)"
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         APIClient.getInstance().requestJson( endPoint, .get, parameters: param, encoding: URLEncoding.default, headers: header) { (result, error, isExpire, code) in
             if isExpire {
                 completionHandler(nil, ServiceError.init(statusCode: 0, message: "Token exp"))
@@ -66,7 +66,7 @@ struct LiveScreenService {
     
     
     func fetchViewCount(param: [String: Any], completionHandler: @escaping (ViewCountModel?, ServiceError?) -> Void) {
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         APIClient.getInstance().requestJson("\(APIConstants.ViewCount)", .get, parameters: param, encoding: URLEncoding.default, headers: header) { result, error, refresh, code in
             if let result = result {
                 let viewCount = Mapper<ViewCountModel>().map(JSONObject: result as! [String: Any])
@@ -77,8 +77,20 @@ struct LiveScreenService {
         }
     }
     
+    func fetchPurchaseCount(param: [String: Any], completionHandler: @escaping (ViewCountModel?, ServiceError?) -> Void) {
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
+        APIClient.getInstance().requestJson("\(APIConstants.PurchaseCount)", .get, parameters: param, encoding: URLEncoding.default, headers: header) { result, error, refresh, code in
+            if let result = result {
+                let viewCount = Mapper<ViewCountModel>().map(JSONObject: result as! [String: Any])
+                completionHandler(viewCount, nil)
+            } else {
+                completionHandler(nil, error)
+            }
+        }
+    }
+    
     func sendMessage(param: [String: Any], completionHandler: @escaping (Any?, ServiceError?) -> Void) {
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         APIClient.getInstance().requestJson("\(APIConstants.LiveSessionComments)", .post, parameters: param, headers: header) { result, error, refresh, code in
             if code == ResponseCode.success {
                 print("code: ", code)
@@ -98,7 +110,7 @@ struct LiveScreenService {
     
     func fetchProduct(by productId: String, completionHandler: @escaping (Product?, ServiceError?) -> Void) {
         let endPoint = "\(APIConstants.Product)/\(productId)"
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         APIClient.getInstance().requestJson(endPoint, .get, encoding: URLEncoding.default, headers: header) { result, error, refresh, code in
             if (200 ... 299).contains(code) {
                 if let result = result {
@@ -121,7 +133,7 @@ struct LiveScreenService {
     
     func postLikeService(param: [String: Any], completionHandler: @escaping (Any?, ServiceError?) -> Void) {
         let endPoint = "\(APIConstants.LikeVideo)"
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         APIClient.getInstance().requestJson(endPoint, .post, parameters: param, headers: header) { result, error, refresh, code in
             if code == ResponseCode.success {
                 print("code: ", code)
@@ -141,7 +153,7 @@ struct LiveScreenService {
     
     func postViewCountService(param: [String: Any], completionHandler: @escaping (Any?, ServiceError?) -> Void) {
         let endPoint = "\(APIConstants.UpdateViewCount)"
-        let header = APIClient.getInstance().getJWTHeader()
+        let header = APIClient.getInstance().getHeader()//getJWTHeader()
         APIClient.getInstance().requestJson(endPoint, .post, parameters: param, headers: header) { result, error, refresh, code in
             if code == ResponseCode.success {
                 print("code: ", code)

@@ -24,6 +24,16 @@ struct ChannelData: Mappable
             return false
         }
     }
+    var isMobileToStream: Bool {
+       
+       if name == "Stream To Mobile" {
+           return true
+       }
+       else {
+           return false
+       }
+   }
+    
     init?(map: Map) {}
     mutating func mapping(map: Map) {
         id <- map["id"]

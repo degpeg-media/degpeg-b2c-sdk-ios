@@ -12,8 +12,18 @@ public class DegpegManager {
     
     private var authKey: String
     
-    public init(appID: String, secret: String, userId: String, userName: String, influencerID: String) {
+    public init(appID: String, secret: String, userId: String, userName: String, influencerID: String, role: UserRoles, publisherID: String?, providerID: String?) {
         authKey = appID
+         Current_User_Role = role
+        if role == .publisher {
+            if let publisher = publisherID {
+                DEFAULT_ContentPublisherId = publisher
+            }
+        }else {
+            if let providerId = providerID {
+                DEFAULT_ContentProviderId = providerId
+            }
+        }
         B2CUserDefaults.setAppID(id: appID)
         B2CUserDefaults.setAppSercet(secret: secret)
         B2CUserDefaults.setUserId(id: userId)
@@ -26,8 +36,9 @@ public class DegpegManager {
         // Call API to check Auth key is valid
         // if not return  nil
         let param = ["appId": B2CUserDefaults.getAppID(), "secretKey": B2CUserDefaults.getAppSercet()]
-        
-        self.getJWTToken(param: param)
+        if JWTEnabled {
+            self.getJWTToken(param: param)
+        }
         let bundle = Bundle(for: type(of: self))
         let b = Bundle.init(for: DegpegManager.self)
         let path = b.path(forResource: "B2CSDK", ofType: "bundle")
@@ -53,7 +64,7 @@ public class DegpegManager {
     }
     func getJWTToken(param: [String: Any]) {
         let endPoint = "\(APIConstants.JWT_TOKEN)"
-        let header = APIClient.getInstance().getJWTHeader()
+        //let header = APIClient.getInstance().getHeader() //getJWTHeader()
         APIClient.getInstance().requestJson(endPoint, .post, parameters: param) { result, error, refresh, code in
             if code == ResponseCode.success {
                 print("code: ", code)

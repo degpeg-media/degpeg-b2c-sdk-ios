@@ -7,8 +7,14 @@
 
 import Foundation
 
-let DEFAULT_ContentPublisherId = "6007cf41f2895e2eabcc2ac2"
+var DEFAULT_ContentPublisherId =  "6007cf41f2895e2eabcc2ac2"
+var DEFAULT_ContentProviderId =  "6007cf41f2895e2eabcc2ac2"
+var Current_User_Role: UserRoles = .publisher //"publisher"
 
+public enum UserRoles{
+    case publisher
+    case provider
+}
 enum Channels {
     case dev
     case staging
@@ -63,12 +69,14 @@ enum BaseURL {
        }
 
 }
+
 let BASE_ACCESS_TOKEN = ""
-let CHANNELS: Channels = .dev
+let CHANNELS: Channels = .live
+let JWTEnabled = false
 struct APIConstants {
     
     
-    static let BaseUrl: BaseURL = .dev1
+    static let BaseUrl: BaseURL = .dev
     static let AccessToken = "accessToken"
     static let JWT_TOKEN = "users/auth/token"
     
@@ -84,4 +92,5 @@ struct APIConstants {
     static let UpdateViewCount = "views"
     static let LiveSessionComments = "chat-messages"
     static let LikeVideo = "likes"
+    static let PurchaseCount = "/purchases/count"
 }
