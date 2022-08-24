@@ -143,7 +143,7 @@ class Socket_IOManager {
     func socketEmit(emitName: String, params: [String: Any]) {
         if let req = convertToJson(input: params) {
         if let socket = socket, socket.status == .connected {
-            Logs.print("Emit: \(emitName)\nParams: \(params)")
+            Logs.print("Emit: \(emitName)\nParams: \(req)")
             socket.emit(emitName, req) {
                 Logs.print("Message Emit")
             }

@@ -9,7 +9,6 @@
 import UIKit
 import B2CSDK
 class ViewController1: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -51,10 +50,45 @@ class ViewController: UIViewController {
     private var products: [[String: String]] = []
 
     //-------------------------------------------------------------------------------------------------------------------------------------------
+    
+    
+    //Custom pop up
+    @IBOutlet weak var customPopup: UIView!
+    @IBOutlet weak var textAppID: UITextField!
+    @IBOutlet weak var textSecret: UITextField!
+    @IBOutlet weak var textUserName: UITextField!
+    @IBOutlet weak var textPublisherIDOrProviderID: UITextField!
+    @IBOutlet weak var publisherOrProviderSwitch: UISwitch!
+    @IBOutlet weak var labelSDKFor: UILabel!
+    var selectedRole: UserRoles = .publisher
     override func viewDidLoad() {
 
         super.viewDidLoad()
-
+        initialConfiguration()
+        let appId = "degpegdegpeg _mediaXuUwyvni"
+        let secretKey = "Nnra8P2iGqT2uJFU"
+        let publisherId = "6007cf41f2895e2eabcc2ac2"
+        
+        textAppID.text = appId
+        textSecret.text = secretKey
+        textUserName.text = "Raj Kadam"
+        publisherOrProviderSwitch.isOn = true
+        labelSDKFor.text = "SDK For Publisher"
+        textPublisherIDOrProviderID.text = publisherId
+       
+    }
+    
+    @IBAction func switchVAlueChanged(_ sender: UISwitch) {
+        
+        if sender.isOn {
+            labelSDKFor.text = "SDK For Publisher"
+            selectedRole = .publisher
+        }else{
+            labelSDKFor.text = "SDK For Provider"
+            selectedRole = .provider
+        }
+    }
+    func initialConfiguration(){
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: viewTitle)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: viewProfile)
 
@@ -178,12 +212,19 @@ class ViewController: UIViewController {
         // 3. app secret
         //
         
-        let appId = "degpegdegpeg _mediaXuUwyvni"
-        let secretKey = "Nnra8P2iGqT2uJFU"
-        let publisherId = "6007cf41f2895e2eabcc2ac2"
+        let appId = textAppID.text ?? "degpegdegpeg _mediaXuUwyvni"
+        let secretKey = textSecret.text ?? "Nnra8P2iGqT2uJFU"
+        var publisherId:String? = nil
+        var providerID: String? = nil
+        if selectedRole == .publisher {
+            publisherId = textPublisherIDOrProviderID.text ?? "6007cf41f2895e2eabcc2ac2"
+        }else{
+            providerID = textPublisherIDOrProviderID.text ?? "6007cf41f2895e2eabcc2ac2"
+        }
+        let userName = textUserName.text ?? "Raj Kadam"
 //        "appId": "degpegdegpeg _mediaXuUwyvni",
 //                "secretKey": "Nnra8P2iGqT2uJFU",
-        let manager = DegpegManager.init(appID: appId, secret: secretKey, userId: "6278c4556cb38a7a9c10df6e", userName: "Raj Kadam", influencerID: "6278c4546cb38a7a9c10df6d", role: .publisher, publisherID: publisherId, providerID: nil) //DegpegManager.init(key: "1234", userId: "6278c4556cb38a7a9c10df6e", userName: "Raj Kadam", influencerID: "6278c4546cb38a7a9c10df6d")
+        let manager = DegpegManager.init(appID: appId, secret: secretKey, userId: "6278c4556cb38a7a9c10df6e", userName:userName, influencerID: "6278c4546cb38a7a9c10df6d", role: selectedRole, publisherID: publisherId, providerID: providerID) //DegpegManager.init(key: "1234", userId: "6278c4556cb38a7a9c10df6e", userName: "Raj Kadam", influencerID: "6278c4546cb38a7a9c10df6d")
         if let vc = manager.getRootViewController() {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
@@ -209,7 +250,23 @@ class ViewController: UIViewController {
     //-------------------------------------------------------------------------------------------------------------------------------------------
     @IBAction func actionProfile(_ sender: UIButton) {
         print(#function)
-       openSDK()
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) {
+            self.customPopup.isHidden = false
+            self.view.layoutIfNeeded()
+        } completion: { flag in
+            
+        }
+
+    }
+    @IBAction func hideCustomization(_ sender: UIButton) {
+        print(#function)
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) {
+            self.customPopup.isHidden = true
+            self.view.layoutIfNeeded()
+        } completion: { flag in
+            
+        }
+
     }
     
     @IBAction func actionDegpegSDKDemo(_ sender: UIButton) {
