@@ -116,16 +116,18 @@ final class LiveScreenViewModel: LiveScreenViewModelProtocol {
     
     func createSendMessageRequestForSession(sessionId: String, message: String) -> [String: Any]{
         let date = Date.init()
+        let username = B2CUserDefaults.getUserName() ?? "Degpeg"
         let currentTime = date.serverRequestDateString()
-        let req = ["session_id": sessionId, "time_stamp": currentTime, "message": message, "userId": B2CUserDefaults.getUserName() ?? "User"]
+        let req = ["session_id": sessionId, "time_stamp": currentTime, "message": message, "userId": B2CUserDefaults.getUserId() ?? "User", "userName": "\(username)-Admin",]
         return req as [String : Any]
     }
     
     func createSendMessageRequest(sessionId: String, message: String) -> [String: Any]{
         //"username": B2CUserDefaults.getUserName(),
+        let username = B2CUserDefaults.getUserName() ?? "Degpeg"
         let date = Date.init()
         let currentTime = date.serverRequestDateString()
-        let req = ["time_stamp": currentTime, "userId": B2CUserDefaults.getUserName(), "message": message, "liveSessionId": sessionId]
+        let req = ["time_stamp": currentTime, "userId": B2CUserDefaults.getUserId(), "userName": "\(username)-Admin", "message": message, "liveSessionId": sessionId]
         return req as [String : Any] //["data": req]
     }
     

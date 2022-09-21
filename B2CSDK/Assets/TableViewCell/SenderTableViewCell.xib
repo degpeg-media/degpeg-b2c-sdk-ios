@@ -8,11 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Nunito-Bold.ttf">
-            <string>Nunito-Bold</string>
-        </array>
         <array key="Nunito-Regular.ttf">
             <string>Nunito-Regular</string>
+        </array>
+        <array key="Nunito-SemiBold.ttf">
+            <string>Nunito-SemiBold</string>
         </array>
     </customFonts>
     <objects>
@@ -25,10 +25,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="624-XF-GRt">
-                        <rect key="frame" x="225" y="8" width="28" height="28"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  RK" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="624-XF-GRt">
+                        <rect key="frame" x="191" y="8" width="60" height="24"/>
                         <color key="backgroundColor" red="0.30196078430000001" green="1" blue="0.41176470590000003" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="4Ng-Le-Mzq"/>
+                            <constraint firstAttribute="height" constant="24" id="tlW-EZ-ITH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
@@ -37,14 +41,6 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cIE-YJ-G2m">
-                        <rect key="frame" x="225" y="8" width="28" height="28"/>
-                        <color key="backgroundColor" red="0.30196078430000001" green="1" blue="0.41176470590000003" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="28" id="2eK-Lf-VsL"/>
-                            <constraint firstAttribute="height" constant="28" id="DpD-qy-erP"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddZ-ia-Bgh">
                         <rect key="frame" x="265" y="8" width="35" height="30"/>
                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
@@ -54,17 +50,12 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="cIE-YJ-G2m" firstAttribute="top" secondItem="ceh-ci-2r5" secondAttribute="top" constant="8" id="A3F-UH-3vx"/>
-                    <constraint firstItem="ddZ-ia-Bgh" firstAttribute="top" secondItem="cIE-YJ-G2m" secondAttribute="top" id="AJO-p3-ftS"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cIE-YJ-G2m" secondAttribute="bottom" constant="8" id="Dp5-0O-MvY"/>
-                    <constraint firstItem="624-XF-GRt" firstAttribute="trailing" secondItem="cIE-YJ-G2m" secondAttribute="trailing" id="Ehe-sz-Yfi"/>
-                    <constraint firstItem="624-XF-GRt" firstAttribute="bottom" secondItem="cIE-YJ-G2m" secondAttribute="bottom" id="JEz-13-h73"/>
-                    <constraint firstItem="cIE-YJ-G2m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ceh-ci-2r5" secondAttribute="leading" constant="50" id="Qmr-PN-db7"/>
                     <constraint firstAttribute="bottom" secondItem="ddZ-ia-Bgh" secondAttribute="bottom" constant="6" id="d9k-L4-eM7"/>
                     <constraint firstAttribute="trailing" secondItem="ddZ-ia-Bgh" secondAttribute="trailing" constant="20" id="dql-Kb-YRo"/>
-                    <constraint firstItem="ddZ-ia-Bgh" firstAttribute="leading" secondItem="cIE-YJ-G2m" secondAttribute="trailing" constant="12" id="i5f-Y9-AYb"/>
-                    <constraint firstItem="624-XF-GRt" firstAttribute="leading" secondItem="cIE-YJ-G2m" secondAttribute="leading" id="o6o-Kr-eJW"/>
-                    <constraint firstItem="624-XF-GRt" firstAttribute="top" secondItem="cIE-YJ-G2m" secondAttribute="top" id="r1c-Bd-ySC"/>
+                    <constraint firstItem="ddZ-ia-Bgh" firstAttribute="leading" secondItem="624-XF-GRt" secondAttribute="trailing" constant="14" id="gzt-6R-Ioc"/>
+                    <constraint firstItem="624-XF-GRt" firstAttribute="top" secondItem="ceh-ci-2r5" secondAttribute="top" constant="8" id="oSG-ZC-oy8"/>
+                    <constraint firstItem="ddZ-ia-Bgh" firstAttribute="top" secondItem="624-XF-GRt" secondAttribute="top" id="p0o-RE-tAS"/>
+                    <constraint firstItem="624-XF-GRt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ceh-ci-2r5" secondAttribute="leading" constant="50" id="zKd-6K-VdY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="Icf-cq-HwN"/>
@@ -72,7 +63,6 @@
             <connections>
                 <outlet property="messageLabel" destination="ddZ-ia-Bgh" id="lBT-y9-bxW"/>
                 <outlet property="nameLabel" destination="624-XF-GRt" id="BkW-tF-RXV"/>
-                <outlet property="profileImage" destination="cIE-YJ-G2m" id="Ekx-NN-Qci"/>
             </connections>
             <point key="canvasLocation" x="126" y="33"/>
         </tableViewCell>

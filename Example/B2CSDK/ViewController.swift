@@ -60,20 +60,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var textPublisherIDOrProviderID: UITextField!
     @IBOutlet weak var publisherOrProviderSwitch: UISwitch!
     @IBOutlet weak var labelSDKFor: UILabel!
-    var selectedRole: UserRoles = .publisher
+    @IBOutlet weak var buttonUpdate: UIButton!
+    var selectedRole: UserRoles = .provider
     override func viewDidLoad() {
 
         super.viewDidLoad()
         initialConfiguration()
         let appId = "degpegdegpeg _mediaXuUwyvni"
         let secretKey = "Nnra8P2iGqT2uJFU"
-        let publisherId = "6007cf41f2895e2eabcc2ac2"
+        let publisherId = "624bf03a328330fc09174c3b"//"6007cf41f2895e2eabcc2ac2"
         
         textAppID.text = appId
         textSecret.text = secretKey
         textUserName.text = "Raj Kadam"
-        publisherOrProviderSwitch.isOn = true
-        labelSDKFor.text = "SDK For Publisher"
+        publisherOrProviderSwitch.isOn = false
+        if publisherOrProviderSwitch.isOn {
+            labelSDKFor.text = "SDK For Publisher"
+            selectedRole = .publisher
+        }else{
+            labelSDKFor.text = "SDK For Provider"
+            selectedRole = .provider
+        }
         textPublisherIDOrProviderID.text = publisherId
        
     }
@@ -219,7 +226,7 @@ class ViewController: UIViewController {
         if selectedRole == .publisher {
             publisherId = textPublisherIDOrProviderID.text ?? "6007cf41f2895e2eabcc2ac2"
         }else{
-            providerID = textPublisherIDOrProviderID.text ?? "6007cf41f2895e2eabcc2ac2"
+            providerID = textPublisherIDOrProviderID.text ?? "624bf03a328330fc09174c3b" //624bf03a328330fc09174c3b
         }
         let userName = textUserName.text ?? "Raj Kadam"
 //        "appId": "degpegdegpeg _mediaXuUwyvni",

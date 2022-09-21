@@ -8,7 +8,7 @@
 import UIKit
 
 class ReceiverTableViewCell: UITableViewCell {
-    @IBOutlet weak var profileImage: UIImageView!
+    //@IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     override func awakeFromNib() {
@@ -17,18 +17,19 @@ class ReceiverTableViewCell: UITableViewCell {
     }
 
     func configureUI(){
-        profileImage.layer.cornerRadius = profileImage.frame.size.height/2
-        profileImage.layer.borderWidth = 1
-        profileImage.layer.borderColor = UIColor.receiverProfileBorder.cgColor
+//        profileImage.layer.cornerRadius = profileImage.frame.size.height/2
+//        profileImage.layer.borderWidth = 1
+//        profileImage.layer.borderColor = UIColor.receiverProfileBorder.cgColor
         
-        nameLabel.layer.cornerRadius = profileImage.frame.size.height/2
-        nameLabel.layer.borderWidth = 1
+        nameLabel.layer.cornerRadius = 4//profileImage.frame.size.height/2
+        nameLabel.layer.borderWidth = 0
         nameLabel.layer.borderColor = UIColor.receiverProfileBorder.cgColor
     }
     
     func setupCellData(message: ChatMessage) {
         messageLabel.text = message.message
-        nameLabel.text = message.userId?.nameToInitials()
+        let name = message.userName ?? "Degpeg"
+        nameLabel.text = "  \(name)"
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

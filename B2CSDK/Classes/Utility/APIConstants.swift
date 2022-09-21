@@ -38,6 +38,7 @@ enum BaseURL {
     case live
     case test
     case dev1
+    case liveWithJWT
     var apiURL: String {
         switch self {
         case .dev:
@@ -46,6 +47,8 @@ enum BaseURL {
             return "https://staging.api.degpeg.com/"
         case .live:
             return "https://prod.api.degpeg.com/"
+        case .liveWithJWT:
+            return "https://prod1.api.degpeg.com/"
         case .test:
             return "https://test.api.degpeg.com/"
         case .dev1:
@@ -61,22 +64,41 @@ enum BaseURL {
                return "https://prod.interactionserver.degpeg.com:9012/"
            case .live:
                return "https://prod.interactionserver.degpeg.com:9012/"
+           case .liveWithJWT:
+               return "https://prod1.interactionserver.degpeg.com:9015/"
            case .test:
                return "https://test.interactionserver.degpeg.com:9015/"
            case .dev1:
                return "https://dev.interactionserver.degpeg.com:9014/"
            }
        }
+    
+    var shareURL: String {
+        switch self {
+        case .dev:
+            return "https://dev.client.degpeg.com/?"
+        case .staging:
+            return "https://dev.client.degpeg.com/?"
+        case .live:
+            return "https://client.degpeg.com/?"
+        case .test:
+            return "https://dev.client.degpeg.com/?"
+        case .dev1:
+            return "https://dev.client.degpeg.com/?"
+        case .liveWithJWT:
+            return "https://client.degpeg.com/?"
+        }
+    }
 
 }
 
 let BASE_ACCESS_TOKEN = ""
 let CHANNELS: Channels = .live
-let JWTEnabled = false
+let JWTEnabled = true
 struct APIConstants {
     
     
-    static let BaseUrl: BaseURL = .dev
+    static let BaseUrl: BaseURL = .liveWithJWT
     static let AccessToken = "accessToken"
     static let JWT_TOKEN = "users/auth/token"
     

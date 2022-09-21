@@ -8,6 +8,7 @@
 import Foundation
 struct AlertTitles {
     static let Error = "Error"
+    static let TryAgain = "Try Again"
     static let Alert = "Alert"
 }
 

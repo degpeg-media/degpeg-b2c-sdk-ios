@@ -48,7 +48,7 @@ class Socket_IOManager {
         if Current_User_Role == .provider {
             return ["contentProviderId" : id]
         }else {
-            return ["contentPublisherId": id]//["influencerId": influencerID]
+            return ["contentPublisherId": id]
         }
     }
     

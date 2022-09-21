@@ -472,12 +472,32 @@
                                                         <action selector="switchVAlueChanged:" destination="cOB-Ym-Ves" eventType="valueChanged" id="CFx-R0-Ivl"/>
                                                     </connections>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDK for Publisher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K68-bK-q8Q">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDK for Provider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K68-bK-q8Q">
                                                     <rect key="frame" x="30" y="357" width="259" height="20.333333333333314"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5u-8c-K0E">
+                                                    <rect key="frame" x="30" y="413" width="330" height="44"/>
+                                                    <color key="backgroundColor" name="Theme"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="DOD-8B-xHZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Update">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="22"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="hideCustomization:" destination="cOB-Ym-Ves" eventType="touchUpInside" id="ZgN-UX-v3d"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
@@ -491,14 +511,17 @@
                                                 <constraint firstItem="n68-6z-BFV" firstAttribute="leading" secondItem="Xxe-gI-vcm" secondAttribute="leading" constant="30" id="DhI-at-E7d"/>
                                                 <constraint firstItem="0ec-LX-ilB" firstAttribute="leading" secondItem="n68-6z-BFV" secondAttribute="leading" id="ELG-rE-XfW"/>
                                                 <constraint firstItem="8ID-rw-4VP" firstAttribute="top" secondItem="dZm-FA-ZBy" secondAttribute="bottom" constant="32" id="FUD-Wn-XW1"/>
+                                                <constraint firstItem="Y5u-8c-K0E" firstAttribute="top" secondItem="inD-6e-ycW" secondAttribute="bottom" constant="30" id="K6k-Pb-AvV"/>
                                                 <constraint firstItem="8ID-rw-4VP" firstAttribute="top" secondItem="wUm-Wx-mQS" secondAttribute="bottom" constant="2" id="KsA-dX-e74"/>
                                                 <constraint firstItem="WDf-Wp-Zpu" firstAttribute="top" secondItem="Xxe-gI-vcm" secondAttribute="top" constant="21" id="MSt-xD-UYM"/>
+                                                <constraint firstItem="Y5u-8c-K0E" firstAttribute="leading" secondItem="Xxe-gI-vcm" secondAttribute="leading" constant="30" id="Mtm-k5-yaA"/>
                                                 <constraint firstItem="dZm-FA-ZBy" firstAttribute="trailing" secondItem="n68-6z-BFV" secondAttribute="trailing" id="RgN-IM-v8H"/>
                                                 <constraint firstItem="ndJ-tT-xqc" firstAttribute="leading" secondItem="8ID-rw-4VP" secondAttribute="leading" id="YXo-uU-GJu"/>
                                                 <constraint firstItem="ndJ-tT-xqc" firstAttribute="trailing" secondItem="8ID-rw-4VP" secondAttribute="trailing" id="Ynh-VQ-8wF"/>
                                                 <constraint firstItem="dZm-FA-ZBy" firstAttribute="top" secondItem="n68-6z-BFV" secondAttribute="bottom" constant="32" id="ZaW-Wa-m7S"/>
                                                 <constraint firstItem="ndJ-tT-xqc" firstAttribute="top" secondItem="8ID-rw-4VP" secondAttribute="bottom" constant="32" id="bL2-h3-BMS"/>
                                                 <constraint firstAttribute="trailing" secondItem="inD-6e-ycW" secondAttribute="trailing" constant="32" id="bZB-26-EqU"/>
+                                                <constraint firstAttribute="trailing" secondItem="Y5u-8c-K0E" secondAttribute="trailing" constant="30" id="cmE-ah-3JX"/>
                                                 <constraint firstItem="n68-6z-BFV" firstAttribute="top" secondItem="WDf-Wp-Zpu" secondAttribute="bottom" constant="20" id="d9W-Hm-FCc"/>
                                                 <constraint firstItem="inD-6e-ycW" firstAttribute="leading" secondItem="K68-bK-q8Q" secondAttribute="trailing" constant="20" id="ewh-5f-gop"/>
                                                 <constraint firstItem="K68-bK-q8Q" firstAttribute="leading" secondItem="Xxe-gI-vcm" secondAttribute="leading" constant="30" id="i28-5q-1ZE"/>
@@ -553,6 +576,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonUpdate" destination="Y5u-8c-K0E" id="9sV-se-1K5"/>
                         <outlet property="collectionViewCategories" destination="hVa-yG-JQ4" id="5kR-pV-BYK"/>
                         <outlet property="collectionViewDiscounts" destination="KVL-1H-jSb" id="4QZ-pM-7cZ"/>
                         <outlet property="collectionViewSlider" destination="cbu-Zr-8Wv" id="mYw-o0-waV"/>
@@ -574,7 +598,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1D-G9-Asd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="110"/>
+            <point key="canvasLocation" x="763.07692307692309" y="109.47867298578198"/>
         </scene>
     </scenes>
     <resources>

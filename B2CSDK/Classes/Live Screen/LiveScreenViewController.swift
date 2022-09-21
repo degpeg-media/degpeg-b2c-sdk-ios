@@ -185,6 +185,17 @@ extension LiveScreenViewController {
 
 //MARK: Video Player
 extension LiveScreenViewController {
+    
+    @IBAction func muteUnmuteAudio(sender: UIButton){
+        if player?.isMuted ?? true {
+            player?.isMuted = false
+            sender.isSelected = false
+        }else{
+            player?.isMuted = true
+            sender.isSelected = true
+        }
+        
+    }
     @objc func resetPlayer() {
         player?.seek(to: .zero)
         player?.play()
@@ -246,12 +257,25 @@ extension LiveScreenViewController {
     
     @IBAction func shareAction()
     {
+       //https://client.degpeg.com/?id=61fd2505a958e382ff246d00&session=630dd97905186b208a5977e3
         let stringDate = screenData?.sessionDate.dateToString() ?? ""
         let message = "Hey join this event:\(screenData?.name ?? "")\nOn \(stringDate)\n"
-        guard let urlStr = screenData?.videoUrl, let url = URL.init(string: urlStr) else {
+        guard let sessionId = screenData?.id else{
+            showAlertView(title: AlertTitles.TryAgain, message: "session data not found!")
+            return
+        }
+        var urlString = APIConstants.BaseUrl.shareURL + "id="
+        if Current_User_Role == .publisher {
+            urlString = urlString+DEFAULT_ContentPublisherId+"&"
+        }else{
+            urlString = urlString+DEFAULT_ContentProviderId+"&"
+        }
+        urlString = urlString+"session="+sessionId
+        guard let url = URL.init(string: urlString) else {
             showAlertView(title: AlertTitles.Error, message: "Video URL not found!")
             return
         }
+        //https://dev.client.degpeg.com/?id=62da7cd386d452b1b9cf5f3e&session=630df05203604e6f84df8fc0
         let objectsToShare = [message, url] as [Any]
         self.showSharePopoup(shareObject: objectsToShare)
     }
@@ -305,7 +329,7 @@ extension LiveScreenViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messageArray[indexPath.row]
-        if message.userId == B2CUserDefaults.getUserName() {
+        if message.userId == B2CUserDefaults.getUserId() {
             // Sender message cell
             if let cell = tableView.dequeueReusableCell(withIdentifier: TableCellID.SenderCell, for: indexPath) as? SenderTableViewCell {
                 cell.configureUI()
